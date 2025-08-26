@@ -13,15 +13,17 @@ const topMarqueeImages = [
   { src: '/d.jpg', alt: 'Kharadi skyline from rooftop terrace', width: 360, height: 280 },
   { src: '/e.jpg', alt: 'Premium single room interiors', width: 400, height: 280 },
   { src: '/z.jpg', alt: 'Fitness facilities for residents', width: 380, height: 280 },
+    { src: '/i.jpg', alt: 'Fitness facilities for residents', width: 380, height: 280 },
+      { src: '/h.jpg', alt: 'Fitness facilities for residents', width: 380, height: 280 },
 ]
 
 const bottomMarqueeImages = [
-  { src: '/x.jpg', alt: 'Professional networking events', width: 390, height: 280 },
-  { src: '/y.jpg', alt: 'Study areas for IT professionals', width: 410, height: 280 },
-  { src: '/w.jpg', alt: 'Community living spaces', width: 370, height: 280 },
-  { src: '/h.jpg', alt: 'Modern amenities at Cohousy', width: 400, height: 280 },
-  { src: '/v.jpg', alt: 'Safe accommodation for women', width: 420, height: 280 },
-  { src: '/i.jpg', alt: 'Digital-first living experience', width: 390, height: 280 },
+  { src: '/11.jpg', alt: 'Professional networking events', width: 390, height: 280 },
+  { src: '/12.jpg', alt: 'Study areas for IT professionals', width: 410, height: 280 },
+  { src: '/13.jpg', alt: 'Community living spaces', width: 370, height: 280 },
+  { src: '/14.jpg', alt: 'Modern amenities at Cohousy', width: 400, height: 280 },
+  { src: '/15.jpg', alt: 'Safe accommodation for women', width: 420, height: 280 },
+  { src: '/16.jpg', alt: 'Digital-first living experience', width: 390, height: 280 },
 ]
 
 export default function LifestyleMarquee() {

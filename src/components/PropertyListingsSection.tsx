@@ -8,7 +8,7 @@ import { staggerContainer, fadeInUp, withMotion } from '@/lib/motion'
 const properties = [
   {
     id: 1,
-    image: '/skyline.avif',
+    image: '/11.jpg',
     title: 'Cohousy Eon',
     subtitle: 'Near Eon IT Park',
     location: '2 min walk to Eon IT Park',
@@ -21,7 +21,7 @@ const properties = [
   },
   {
     id: 2,
-    image: '/skyline.avif',
+    image: '/12.jpg',
     title: 'Cohousy WTC',
     subtitle: 'Walking Distance to WTC',
     location: '5 min walk to WTC Kharadi',
@@ -34,7 +34,7 @@ const properties = [
   },
   {
     id: 3,
-    image: '/skyline.avif',
+    image: '/13.jpg',
     title: 'Cohousy Metro',
     subtitle: 'Premium Location',
     location: '3 min walk to Metro Station',
@@ -47,7 +47,7 @@ const properties = [
   },
   {
     id: 4,
-    image: '/skyline.avif',
+    image: '/14.jpg',
     title: 'Cohousy Essential',
     subtitle: 'Budget-Friendly',
     location: '1 min walk to IT Companies',

@@ -5,6 +5,7 @@ import Script from 'next/script'
 import { Sora, Inter } from 'next/font/google'
 import Navbar from '@/components/Navbar'
 import { Space_Grotesk } from 'next/font/google'
+import Footer from '@/components/Footer'
 
 const spaceGrotesk = Space_Grotesk({
   subsets: ['latin'],
@@ -82,7 +83,8 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <Navbar />
 
         <div className="relative z-[2]">{children}</div>
-
+        {/* Footer */}
+        <Footer />
         {/* JSON-LD: LocalBusiness */}
         <Script id="ld-localbusiness" type="application/ld+json" strategy="afterInteractive">
           {JSON.stringify({
@@ -162,4 +164,3 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     </html>
   )
 }
-// ... existing code ...

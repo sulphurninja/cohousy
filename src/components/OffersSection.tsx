@@ -3,13 +3,14 @@
 import { useRef, useState } from 'react'
 import { motion, useInView, useScroll, useTransform } from 'framer-motion'
 import Image from 'next/image'
+import Link from 'next/link'
 import { staggerContainer, fadeInUp, withMotion } from '@/lib/motion'
 
 const offers = [
   {
     id: 1,
     title: 'Co-Living for Professionals',
-    image: '/skyline.avif',
+    image: '/d.jpg',
     price: '₹10,000',
     period: '/Month',
     description: 'Premium community-style living designed for working professionals. Fully maintained 1BHK and 1RK accommodations with flexible stay options.',
@@ -20,13 +21,14 @@ const offers = [
       'Wellness amenities included'
     ],
     cta: 'Explore Co-living',
+    href: '/co-living',
     popular: false,
     alt: 'Co-living spaces for professionals in Kharadi near Eon IT Park'
   },
   {
     id: 2,
     title: 'Long-Term Rentals',
-    image: '/skyline.avif',
+    image: '/e.jpg',
     price: '₹10,000',
     period: '/Month',
     description: 'Your private space with all comforts included. Choose our premium 1RK or 1BHK accommodations for extended stays in Kharadi.',
@@ -37,13 +39,14 @@ const offers = [
       'Community amenities access'
     ],
     cta: 'View Rentals',
+    href: '/long-term-rentals',
     popular: true,
     alt: 'Single room PG accommodation for long-term stays in Kharadi'
   },
   {
     id: 3,
     title: 'Short-Term Rentals',
-    image: '/skyline.avif',
+    image: '/y.jpg',
     price: '₹1,300',
     period: '/Night',
     description: 'Hassle-free accommodations for short stays. Fully furnished spaces with zero lock-in and premium amenities included.',
@@ -54,6 +57,7 @@ const offers = [
       'Perfect for project stays'
     ],
     cta: 'Book Now',
+    href: '/short-term-rentals',
     popular: false,
     alt: 'Short-term accommodation near Eon IT Park for project stays'
   }
@@ -190,9 +194,11 @@ export default function OffersSection() {
                 </ul>
 
                 {/* Clean CTA Button */}
-                <button className="w-full py-3 cursor-pointer border-2 border-gray-900 text-gray-900 font-semibold rounded-lg hover:bg-gray-900 hover:text-white transition-all duration-300 group/btn">
-                  <span className="relative z-10">{offer.cta}</span>
-                </button>
+                <Link href={offer.href}>
+                  <button className="w-full py-3 cursor-pointer border-2 border-gray-900 text-gray-900 font-semibold rounded-lg hover:bg-gray-900 hover:text-white transition-all duration-300 group/btn">
+                    <span className="relative z-10">{offer.cta}</span>
+                  </button>
+                </Link>
               </div>
 
               {/* Subtle hover accent */}
@@ -214,12 +220,16 @@ export default function OffersSection() {
             Ready to experience premium living in Kharadi's tech hub?
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <button className="px-8 py-3 bg-accent cursor-pointer text-black font-semibold rounded-lg hover:shadow-lg transition-all duration-300">
-              Schedule a Visit
-            </button>
-            <button className="px-8 py-3 border-2 cursor-pointer border-gray-900 text-gray-900 font-semibold rounded-lg hover:bg-gray-900 hover:text-white transition-all duration-300">
-              Download Brochure
-            </button>
+            <Link href="/contact">
+              <button className="px-8 py-3 bg-accent cursor-pointer text-black font-semibold rounded-lg hover:shadow-lg transition-all duration-300">
+                Schedule a Visit
+              </button>
+            </Link>
+            <Link href="/brochure">
+              <button className="px-8 py-3 border-2 cursor-pointer border-gray-900 text-gray-900 font-semibold rounded-lg hover:bg-gray-900 hover:text-white transition-all duration-300">
+                Download Brochure
+              </button>
+            </Link>
           </div>
         </motion.div>
       </div>

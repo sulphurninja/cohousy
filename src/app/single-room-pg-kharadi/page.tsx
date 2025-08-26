@@ -38,14 +38,14 @@ export default function SingleRoomPGPage() {
       <BookLuxuryCTA />
 
       {/* Scroll Progress Indicator */}
-      <div className="fixed top-0 left-0 w-full h-1 bg-black/10 z-50 pointer-events-none">
+      {/* <div className="fixed top-0 left-0 w-full h-1 bg-black/10 z-50 pointer-events-none">
         <div
           className="h-full bg-gradient-to-r from-purple-400 to-indigo-400 transition-all duration-300 ease-out"
           style={{
             width: `${Math.min(100, (scrollY / (document.documentElement.scrollHeight - window.innerHeight)) * 100)}%`
           }}
         />
-      </div>
+      </div> */}
     </main>
   )
 }

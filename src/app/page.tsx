@@ -51,7 +51,7 @@ export default function Home() {
         <WhyChooseSection />
         <LocationAmenitiesSection />
         <AppExperienceSection />
-        <PricingSection />
+        {/* <PricingSection /> */}
         <TestimonialsSection />
         <FAQSection />
         <FinalCTASection />

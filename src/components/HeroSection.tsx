@@ -19,7 +19,7 @@ const services = [
     title: 'Long-Term Rentals',
     subtitle: 'Extended stay solutions',
     image: '/2.jpg',
-    href: '/long-term',
+    href: '/long-term-rentals',
     color: 'from-green-50 to-teal-50'
   },
   {
@@ -27,7 +27,7 @@ const services = [
     title: 'Short-Term Rentals',
     subtitle: 'Flexible accommodation options',
     image: '/3.jpg',
-    href: '/short-term',
+    href: '/short-term-rentals',
     color: 'from-orange-50 to-red-50'
   }
 ]

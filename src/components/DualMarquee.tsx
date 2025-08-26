@@ -65,18 +65,7 @@ export default function DualMarquee({
           {rowId} - {direction} - {images.length} images
         </div> */}
 
-        {/* Left fade */}
-        <div 
-          className="absolute left-0 top-0 h-full z-10 pointer-events-none bg-gradient-to-r from-white to-transparent"
-          style={{ width: fadeWidth }}
-        />
-        
-        {/* Right fade */}
-        <div 
-          className="absolute right-0 top-0 h-full z-10 pointer-events-none bg-gradient-to-l from-white to-transparent"
-          style={{ width: fadeWidth }}
-        />
-       
+      
         {/* Scrolling track */}
         <div 
           className={`flex items-center h-full animate-marquee-${direction}`}
