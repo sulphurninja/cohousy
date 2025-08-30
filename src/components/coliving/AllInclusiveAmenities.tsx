@@ -195,7 +195,7 @@ export default function AllInclusiveAmenities() {
                     initial={{ opacity: 0, y: 20 }}
                     animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
                     transition={{ delay: 0.6, duration: 0.8 }}
-                    className="relative aspect-[2/1] bg-gray-50 rounded-2xl overflow-hidden border border-gray-100"
+                    className="md:relative hidden aspect-[2/1] bg-gray-50 rounded-2xl overflow-hidden border border-gray-100"
                 >
                     <Image
                         src="/skyline.avif"

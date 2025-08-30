@@ -108,8 +108,8 @@ export default function LocationAdvantage() {
                     key={index}
                     onClick={() => setActiveCategory(index)}
                     className={`flex items-center gap-2 px-4 py-2 text-sm font-medium rounded-full transition-all duration-300 ${activeCategory === index
-                        ? 'bg-gray-900 text-white shadow-sm'
-                        : 'text-gray-600 hover:text-gray-900 hover:bg-gray-50 border border-gray-200'
+                      ? 'bg-gray-900 text-white shadow-sm'
+                      : 'text-gray-600 hover:text-gray-900 hover:bg-gray-50 border border-gray-200'
                       }`}
                   >
                     <IconComponent size={16} />
@@ -145,7 +145,7 @@ export default function LocationAdvantage() {
           {/* Interactive Location Map */}
           <motion.div
             variants={withMotion(fadeInUp)}
-            className="relative aspect-[1/1] bg-white rounded-2xl overflow-hidden border border-gray-200 shadow-lg"
+            className="relative md:aspect-[1/1] aspect-[1/2]  bg-white rounded-2xl overflow-hidden border border-gray-200 shadow-lg"
           >
             {/* Google Maps Embed */}
             <iframe

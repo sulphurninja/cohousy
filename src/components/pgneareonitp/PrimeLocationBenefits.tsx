@@ -110,8 +110,8 @@ export default function PrimeLocationBenefits() {
                     key={index}
                     onClick={() => setActiveCategory(index)}
                     className={`flex items-center gap-2 px-4 py-2 text-sm font-medium rounded-full transition-all duration-300 ${activeCategory === index
-                        ? 'bg-orange-600 text-white shadow-sm'
-                        : 'text-gray-600 hover:text-orange-600 hover:bg-orange-50 border border-orange-200'
+                      ? 'bg-orange-600 text-white shadow-sm'
+                      : 'text-gray-600 hover:text-orange-600 hover:bg-orange-50 border border-orange-200'
                       }`}
                   >
                     <IconComponent size={16} />
@@ -147,7 +147,7 @@ export default function PrimeLocationBenefits() {
           {/* Interactive Location Map */}
           <motion.div
             variants={withMotion(fadeInUp)}
-            className="relative aspect-[1] bg-white rounded-2xl overflow-hidden border border-gray-200 shadow-lg"
+            className="relative md:aspect-[2/1] aspect-[1/2]  bg-white rounded-2xl overflow-hidden border border-gray-200 shadow-lg"
           >
             {/* Google Maps Embed */}
             <iframe
