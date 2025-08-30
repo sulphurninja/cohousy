@@ -123,7 +123,7 @@ export default function LongTermHero() {
             className="relative aspect-[4/5] overflow-hidden rounded-2xl"
           >
             <Image
-              src="/skyline.avif"
+              src="/long/Hero.jpg"
               alt="Premium long-term rental rooms at Cohousy Kharadi"
               fill
               className="object-cover transition-transform duration-700 hover:scale-105"

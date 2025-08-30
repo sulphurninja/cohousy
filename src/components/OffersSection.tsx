@@ -10,7 +10,7 @@ const offers = [
   {
     id: 1,
     title: 'Co-Living for Professionals',
-    image: '/d.jpg',
+    image: '/Home/Co-Living for Professionals.jpg',
     price: '₹10,000',
     period: '/Month',
     description: 'Premium community-style living designed for working professionals. Fully maintained 1BHK and 1RK accommodations with flexible stay options.',
@@ -28,7 +28,7 @@ const offers = [
   {
     id: 2,
     title: 'Long-Term Rentals',
-    image: '/e.jpg',
+    image: '/Home/Long-Term Rental.jpg',
     price: '₹10,000',
     period: '/Month',
     description: 'Your private space with all comforts included. Choose our premium 1RK or 1BHK accommodations for extended stays in Kharadi.',
@@ -46,7 +46,7 @@ const offers = [
   {
     id: 3,
     title: 'Short-Term Rentals',
-    image: '/y.jpg',
+    image: '/Home/Short-Term Rental.jpg',
     price: '₹1,300',
     period: '/Night',
     description: 'Hassle-free accommodations for short stays. Fully furnished spaces with zero lock-in and premium amenities included.',

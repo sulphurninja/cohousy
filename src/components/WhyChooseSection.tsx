@@ -60,7 +60,7 @@ export default function WhyChooseSection() {
   return (
     <section 
       ref={containerRef}
-      className="py-section bg-white relative overflow-hidden"
+      className="py- bg-white relative overflow-hidden"
     >
       {/* Subtle background pattern */}
       <div className="absolute inset-0 opacity-[0.02]">
@@ -79,7 +79,7 @@ export default function WhyChooseSection() {
             className="relative aspect-[4/5] overflow-hidden rounded-2xl"
           >
             <Image
-              src="/skyline.avif"
+              src="/Home/The Future of Professional Living.jpg"
               alt="Professional lifestyle at Cohousy co-living spaces near Eon IT Park"
               fill
               className="object-cover transition-transform duration-700 hover:scale-105"

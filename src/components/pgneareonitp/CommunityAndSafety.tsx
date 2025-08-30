@@ -158,7 +158,7 @@ export default function CommunityAndSafety() {
               className="mt-8 relative aspect-video overflow-hidden rounded-xl"
             >
               <Image
-                src="/skyline.avif"
+                src="/PG/500+ IT Professionals.jpg"
                 alt="Community spaces at PG near Eon IT Park Kharadi"
                 fill
                 className="object-cover"

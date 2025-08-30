@@ -124,7 +124,7 @@ export default function MalePGHero() {
             className="relative aspect-[4/5] overflow-hidden rounded-2xl"
           >
             <Image
-              src="/skyline.avif"
+              src="/male/Hero.jpg"
               alt="Male PG accommodation for boys near Eon IT Park Kharadi"
               fill
               className="object-cover transition-transform duration-700 hover:scale-105"

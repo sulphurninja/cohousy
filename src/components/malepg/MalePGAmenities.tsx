@@ -12,56 +12,56 @@ const amenities = [
     title: 'High-Speed Wi-Fi & Central Wi-Fi',
     description: 'Stay connected with uninterrupted internet for remote work or streaming, essential for IT pros near Eon IT Park Kharadi.',
     category: 'Connectivity',
-    image: '/a.jpg'
+    image: '/male/High-speed.jpg'
   },
   {
     icon: Shield,
     title: '24/7 Security & CCTV Surveillance',
     description: 'Safety is paramount in our boys PG with round-the-clock monitoring and security guard to give you complete peace of mind.',
     category: 'Security',
-    image: '/b.jpg'
+    image: '/male/CCTV.jpg'
   },
   {
     icon: Dumbbell,
     title: 'Common Gym & Fitness Facilities',
     description: 'Maintain your health with access to well-equipped gym and badminton courts, perfect for unwinding after work at WTC Kharadi.',
     category: 'Fitness',
-    image: '/c.jpg'
+    image: '/male/Common Gym.jpg'
   },
   {
     icon: Home,
     title: 'Housekeeping & Room Cleaning',
     description: 'Enjoy hassle-free living with regular cleaning, common laundry, and washing machines—no more weekend chores for busy professionals.',
     category: 'Maintenance',
-    image: '/d.jpg'
+    image: '/male/Housekeeping.jpg'
   },
   {
     icon: Utensils,
     title: 'Kitchen & Dining Essentials',
     description: 'Shared kitchen, common fridge, floor-wise water purifier, and in-app food menu access ensure nutritious meals without stepping out.',
     category: 'Dining',
-    image: '/e.jpg'
+    image: '/male/Kitchen & Dining.jpg'
   },
   {
     icon: Coffee,
     title: 'Common Areas for Relaxation',
     description: 'Lounge in common balcony, lobby, or with common TV—ideal for building connections in our co-living PG environment.',
     category: 'Recreation',
-    image: '/z.jpg'
+    image: '/male/Common Area.jpg'
   },
   {
     icon: Car,
     title: 'Parking & Additional Perks',
     description: 'Secure common parking, first aid box, and balcony options add to everyday convenience for working professionals.',
     category: 'Convenience',
-    image: '/x.jpg'
+    image: '/male/Parking & Additional.jpeg'
   },
   {
     icon: Smartphone,
     title: 'Power Backup & Modern Tech',
     description: 'Reliable electricity backup and attached washrooms in rooms prevent disruptions in your routine and work schedule.',
     category: 'Technology',
-    image: '/y.jpg'
+    image: '/male/Power Backup.jpg'
   }
 ]
 

@@ -40,7 +40,7 @@ export default function LifestyleMarquee() {
   return (
     <section 
       ref={containerRef}
-      className="py-section bg-white  relative overflow-hidden"
+      className="py- bg-white  relative overflow-hidden"
     >
       {/* Professional Section Header */}
       <motion.div

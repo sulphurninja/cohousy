@@ -8,7 +8,7 @@ import { staggerContainer, fadeInUp, withMotion } from '@/lib/motion'
 const properties = [
   {
     id: 1,
-    image: '/11.jpg',
+    image: '/Home/Premium Co-living.jpg',
     title: 'Cohousy Eon',
     subtitle: 'Near Eon IT Park',
     location: '2 min walk to Eon IT Park',
@@ -17,11 +17,13 @@ const properties = [
     rooms: '3 × 1BHK available',
     type: 'Premium Co-living',
     amenities: ['Attached washroom', 'Balcony', 'Gym', 'Wi-Fi'],
-    alt: 'Cohousy premium co-living building near Eon IT Park Kharadi'
+    alt: 'Cohousy premium co-living building near Eon IT Park Kharadi',
+    // Add filter categories for this property
+    categories: ['Premium', 'Near IT Parks']
   },
   {
     id: 2,
-    image: '/12.jpg',
+    image: '/Home/Modern Co-living.jpg',
     title: 'Cohousy WTC',
     subtitle: 'Walking Distance to WTC',
     location: '5 min walk to WTC Kharadi',
@@ -30,11 +32,12 @@ const properties = [
     rooms: '3 × 1RK, 2 × 1BHK available',
     type: 'Modern Co-living',
     amenities: ['Power backup', 'Laundry', 'Kitchen', 'CCTV'],
-    alt: 'Cohousy modern co-living near WTC Kharadi'
+    alt: 'Cohousy modern co-living near WTC Kharadi',
+    categories: ['Premium', 'Near IT Parks']
   },
   {
     id: 3,
-    image: '/13.jpg',
+    image: '/Home/Luxury PG.jpg',
     title: 'Cohousy Metro',
     subtitle: 'Premium Location',
     location: '3 min walk to Metro Station',
@@ -43,11 +46,12 @@ const properties = [
     rooms: '2 × 1BHK available',
     type: 'Luxury PG',
     amenities: ['Premium furnishing', 'Concierge', 'Rooftop', 'Parking'],
-    alt: 'Cohousy luxury accommodation with metro connectivity'
+    alt: 'Cohousy luxury accommodation with metro connectivity',
+    categories: ['Premium', 'Metro Access']
   },
   {
     id: 4,
-    image: '/14.jpg',
+    image: '/Home/Essential Co-living.jpg',
     title: 'Cohousy Essential',
     subtitle: 'Budget-Friendly',
     location: '1 min walk to IT Companies',
@@ -56,9 +60,11 @@ const properties = [
     rooms: '33 rooms available',
     type: 'Essential Co-living',
     amenities: ['24/7 security', 'Parking', 'First aid', 'Common areas'],
-    alt: 'Budget-friendly accommodation near IT companies'
+    alt: 'Budget-friendly accommodation near IT companies',
+    categories: ['Budget-Friendly', 'Near IT Parks']
   }
 ]
+
 
 const filters = ['All Properties', 'Premium', 'Budget-Friendly', 'Near IT Parks', 'Metro Access']
 
@@ -67,16 +73,21 @@ export default function PropertyListingsSection() {
   const isInView = useInView(containerRef, { once: true, margin: "-10%" })
   const [hoveredProperty, setHoveredProperty] = useState<number | null>(null)
   const [activeFilter, setActiveFilter] = useState('All Properties')
-  
+
+  // Add filtering logic
+  const filteredProperties = properties.filter(property => {
+    if (activeFilter === 'All Properties') return true
+    return property.categories.includes(activeFilter)
+  })
+
   const { scrollYProgress } = useScroll({
     target: containerRef,
     offset: ["start end", "end start"]
   })
-  
-  const headerY = useTransform(scrollYProgress, [0, 0.3], [50, -50])
 
+  const headerY = useTransform(scrollYProgress, [0, 0.3], [50, -50])
   return (
-    <section 
+    <section
       ref={containerRef}
       id="properties"
       className="py-section bg-white relative overflow-hidden"
@@ -90,7 +101,7 @@ export default function PropertyListingsSection() {
       </div>
 
       <div className="container mx-auto px-6 relative">
-        
+
         {/* Clean Section Header */}
         <motion.div
           style={{ y: headerY }}
@@ -121,7 +132,7 @@ export default function PropertyListingsSection() {
             variants={withMotion(fadeInUp)}
             className="text-xl text-gray-600 font-light tracking-wide max-w-3xl mx-auto"
           >
-            Strategically located near Pune's leading IT parks and metro connectivity, 
+            Strategically located near Pune's leading IT parks and metro connectivity,
             each property offers modern amenities and professional community living.
           </motion.p>
         </motion.div>
@@ -137,25 +148,24 @@ export default function PropertyListingsSection() {
             <button
               key={filter}
               onClick={() => setActiveFilter(filter)}
-              className={`px-6 py-2 text-sm font-medium cursor-pointer rounded-full transition-all duration-300 ${
-                activeFilter === filter
+              className={`px-6 py-2 text-sm font-medium cursor-pointer rounded-full transition-all duration-300 ${activeFilter === filter
                   ? 'bg-gray-900 text-white shadow-sm'
                   : 'text-gray-600 hover:text-gray-900 hover:bg-gray-50 border border-gray-200'
-              }`}
+                }`}
             >
               {filter}
             </button>
           ))}
         </motion.div>
 
-        {/* Clean Properties Grid */}
+        {/* Clean Properties Grid - Use filtered properties */}
         <motion.div
           variants={withMotion(staggerContainer)}
           initial="hidden"
           animate={isInView ? "visible" : "hidden"}
           className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-16"
         >
-          {properties.map((property, index) => (
+          {filteredProperties.map((property, index) => (
             <motion.div
               key={property.id}
               variants={withMotion(fadeInUp)}
@@ -172,7 +182,7 @@ export default function PropertyListingsSection() {
                   className="object-cover transition-transform duration-700 group-hover:scale-105"
                   sizes="(max-width: 768px) 100vw, 50vw"
                 />
-                
+
                 {/* Property Type Badge */}
                 <div className="absolute top-6 left-6 z-10 bg-white/95 backdrop-blur-sm text-black px-3 py-1 rounded-lg text-sm font-medium shadow-sm border border-white/20">
                   {property.type}
@@ -185,9 +195,8 @@ export default function PropertyListingsSection() {
                 </div>
 
                 {/* Clean hover overlay */}
-                <div className={`absolute inset-0 bg-black/20 transition-opacity duration-500 flex items-center justify-center ${
-                  hoveredProperty === property.id ? 'opacity-100' : 'opacity-0'
-                }`}>
+                <div className={`absolute inset-0 bg-black/20 transition-opacity duration-500 flex items-center justify-center ${hoveredProperty === property.id ? 'opacity-100' : 'opacity-0'
+                  }`}>
                   <button className="bg-white cursor-pointer text-black px-6 py-3 rounded-lg font-semibold hover:shadow-lg transition-all duration-300">
                     View Details
                   </button>
@@ -216,7 +225,7 @@ export default function PropertyListingsSection() {
                   </svg>
                   {property.location}
                 </div>
-                
+
                 {/* Pricing */}
                 <div className="text-lg font-semibold text-black mb-6">
                   {property.pricing}
@@ -249,9 +258,8 @@ export default function PropertyListingsSection() {
               </div>
 
               {/* Subtle hover accent */}
-              <div className={`absolute bottom-0 left-0 h-0.5 bg-accent transition-all duration-500 ${
-                hoveredProperty === property.id ? 'w-full' : 'w-0'
-              }`} />
+              <div className={`absolute bottom-0 left-0 h-0.5 bg-accent transition-all duration-500 ${hoveredProperty === property.id ? 'w-full' : 'w-0'
+                }`} />
             </motion.div>
           ))}
         </motion.div>
@@ -270,19 +278,19 @@ export default function PropertyListingsSection() {
             className="object-cover"
             sizes="100vw"
           />
-          
+
           {/* Clean Location Overlay */}
           <div className="absolute inset-0 bg-gradient-to-r from-black/60 via-black/40 to-transparent flex items-center">
             <div className="max-w-2xl p-12 text-white">
               <h3 className="text-3xl font-bold mb-4">
                 Strategic Kharadi Locations
               </h3>
-              
+
               <p className="text-xl text-white/90 mb-8 leading-relaxed">
-                All properties strategically positioned within walking distance of major IT parks, 
+                All properties strategically positioned within walking distance of major IT parks,
                 metro stations, and essential amenities in Pune's fastest-growing tech hub.
               </p>
-              
+
               <div className="flex gap-4">
                 <button className="bg-accent cursor-pointer text-black px-8 py-3 font-semibold rounded-lg hover:shadow-lg transition-all duration-300">
                   View All Locations

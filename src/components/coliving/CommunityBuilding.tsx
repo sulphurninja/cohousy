@@ -11,7 +11,7 @@ const communityFeatures = [
     icon: Calendar,
     title: 'Wellness Sessions',
     description: 'Join yoga classes in the common gym or meditation sessions to maintain work-life balance.',
-    image: '/a.jpg'
+    image: '/Co-living/yoga.jpg'
   },
   {
     icon: Coffee,
@@ -23,13 +23,13 @@ const communityFeatures = [
     icon: Dumbbell,
     title: 'Badminton Tournaments',
     description: 'Regular sports tournaments encouraging teamwork among peers from IT companies.',
-    image: '/c.jpg'
+    image: '/Co-living/badminton.jpeg'
   },
   {
     icon: Music,
     title: 'Social Gatherings',
     description: 'Evening meetups and cultural events to foster connections and combat urban isolation.',
-    image: '/d.jpg'
+    image: '/Co-living/gathering.jpg'
   }
 ]
 
@@ -122,7 +122,6 @@ export default function CommunityBuilding() {
               )
             })}
           </motion.div>
-
           {/* Community Image Collage */}
           <motion.div
             initial={{ opacity: 0, x: 50 }}

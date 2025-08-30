@@ -138,7 +138,7 @@ export default function FemaleProfessionalsBenefits() {
             className="relative aspect-[4/5] overflow-hidden rounded-2xl"
           >
             <Image
-              src="/skyline.avif"
+              src="/single/Single Room PG Female.jpg"
               alt="Safe single room PG for female professionals in Kharadi"
               fill
               className="object-cover"

@@ -250,7 +250,7 @@ export default function SafetyMeasures() {
 
                         <div className="relative aspect-video overflow-hidden rounded-xl">
                             <Image
-                                src="/skyline.avif"
+                                src="/single/Your Safety, Our Priority.jpg"
                                 alt="Safe and secure single room PG environment in Kharadi"
                                 fill
                                 className="object-cover"

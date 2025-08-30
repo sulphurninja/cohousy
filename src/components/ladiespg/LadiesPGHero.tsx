@@ -124,7 +124,7 @@ export default function LadiesPGHero() {
             className="relative aspect-[4/5] overflow-hidden rounded-2xl"
           >
             <Image
-              src="/skyline.avif"
+              src="/ladies/Hero.jpg"
               alt="Safe and secure ladies PG accommodation in Kharadi"
               fill
               className="object-cover transition-transform duration-700 hover:scale-105"

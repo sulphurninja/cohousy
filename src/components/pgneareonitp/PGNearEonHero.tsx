@@ -122,10 +122,11 @@ export default function PGNearEonHero() {
             className="relative aspect-[4/5] overflow-hidden rounded-2xl"
           >
             <Image
-              src="/skyline.avif"
+              src="/PG/hero.jpg"
               alt="PG accommodation walking distance from Eon IT Park Kharadi"
               fill
-              className="object-cover transition-transform duration-700 hover:scale-105"
+              
+              className="object-cover transition-transform duration-700  hover:scale-105"
               sizes="(max-width: 1024px) 100vw, 50vw"
             />
 
@@ -145,12 +146,12 @@ export default function PGNearEonHero() {
             </div>
 
             {/* Location Badge */}
-            <div className="absolute top-1/2 left-8 transform -translate-y-1/2 bg-green-600/95 backdrop-blur-sm text-white p-4 rounded-xl shadow-lg">
+            {/* <div className="absolute top-1/2 left-8 transform -translate-y-1/2 bg-green-600/95 backdrop-blur-sm text-white p-4 rounded-xl shadow-lg">
               <div className="flex items-center space-x-2">
                 <Building2 size={20} />
                 <span className="font-semibold">Prime Location</span>
               </div>
-            </div>
+            </div> */}
           </motion.div>
         </div>
 

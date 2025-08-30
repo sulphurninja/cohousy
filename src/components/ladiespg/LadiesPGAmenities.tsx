@@ -12,7 +12,7 @@ const amenities = [
     title: 'High-Speed Central Wi-Fi',
     description: 'Reliable internet for remote work, online classes, and staying connected with family. Perfect for IT professionals.',
     category: 'Connectivity',
-    image: '/a.jpg',
+    image: '/PG/High-Speed Wi-Fi.jpg',
     femaleSpecific: true
   },
   {
@@ -20,7 +20,7 @@ const amenities = [
     title: 'CCTV + 24/7 Female Security',
     description: 'Round-the-clock monitoring with female security personnel during night shifts for added comfort and safety.',
     category: 'Security',
-    image: '/b.jpg',
+    image: '/Co-living/Peace of Mind Guaranteed.jpg',
     femaleSpecific: true
   },
   {
@@ -28,7 +28,7 @@ const amenities = [
     title: 'Single Room Options',
     description: 'Private single rooms with attached washrooms and balconies. Perfect for professionals who value independence.',
     category: 'Living Space',
-    image: '/c.jpg',
+    image: '/PG/Attached Washroom.jpg',
     femaleSpecific: true
   },
   {
@@ -36,7 +36,7 @@ const amenities = [
     title: 'Hygienic Kitchen & Healthy Meals',
     description: 'Clean, well-maintained kitchen with healthy meal options. Special dietary accommodations for women\'s health needs.',
     category: 'Dining',
-    image: '/d.jpg',
+    image: '/PG/Kitchen& Dining.jpg',
     femaleSpecific: true
   },
   {
@@ -44,7 +44,7 @@ const amenities = [
     title: 'Ladies-Only Gym Hours',
     description: 'Dedicated women-only gym timings with modern equipment. Perfect for maintaining fitness and wellness routines.',
     category: 'Fitness',
-    image: '/e.jpg',
+    image: '/ladies/Ladies-Only Gym.jpg',
     femaleSpecific: true
   },
   {
@@ -52,7 +52,7 @@ const amenities = [
     title: 'Wellness & Mental Health Support',
     description: 'Regular wellness sessions, yoga classes, and mental health support designed specifically for working women.',
     category: 'Wellness',
-    image: '/z.jpg',
+    image: '/ladies/Wellness & Mental.jpg',
     femaleSpecific: true
   },
   {
@@ -60,7 +60,7 @@ const amenities = [
     title: 'Women Safety App Features',
     description: 'Panic button, location sharing with family, and emergency contacts integration for ultimate peace of mind.',
     category: 'Technology',
-    image: '/x.jpg',
+    image: '/ladies/Women Safety App.jpg',
     femaleSpecific: true
   },
   {
@@ -68,7 +68,7 @@ const amenities = [
     title: 'Ladies Lounge & Study Areas',
     description: 'Comfortable common areas designed for socializing, studying, and professional networking among women residents.',
     category: 'Common Areas',
-    image: '/y.jpg',
+    image: '/ladies/Ladies Lounge & Study Area.jpg',
     femaleSpecific: true
   }
 ]
@@ -80,17 +80,17 @@ export default function LadiesPGAmenities() {
   const [hoveredAmenity, setHoveredAmenity] = useState<number | null>(null)
 
   const categories = ['All', ...Array.from(new Set(amenities.map(a => a.category)))]
-  const filteredAmenities = activeCategory === 'All' 
-    ? amenities 
+  const filteredAmenities = activeCategory === 'All'
+    ? amenities
     : amenities.filter(amenity => amenity.category === activeCategory)
 
   return (
-    <section 
+    <section
       ref={containerRef}
       className="py-section bg-gray-50 relative overflow-hidden"
     >
       <div className="container mx-auto px-6">
-        
+
         {/* Section Header */}
         <motion.div
           variants={withMotion(staggerContainer)}
@@ -120,8 +120,8 @@ export default function LadiesPGAmenities() {
             variants={withMotion(fadeInUp)}
             className="text-xl text-gray-600 font-light tracking-wide max-w-4xl mx-auto"
           >
-            At Cohousy, we believe that a ladies PG in Kharadi Pune should feel like an extension of home, 
-            complete with top-tier amenities designed specifically for women's comfort, safety, and well-being. 
+            At Cohousy, we believe that a ladies PG in Kharadi Pune should feel like an extension of home,
+            complete with top-tier amenities designed specifically for women's comfort, safety, and well-being.
             Every feature is thoughtfully curated with the modern professional woman in mind.
           </motion.p>
         </motion.div>
@@ -137,11 +137,10 @@ export default function LadiesPGAmenities() {
             <button
               key={category}
               onClick={() => setActiveCategory(category)}
-              className={`px-4 py-2 text-sm font-medium rounded-full transition-all duration-300 ${
-                activeCategory === category
-                  ? 'bg-pink-600 text-white shadow-sm'
-                  : 'text-gray-600 hover:text-pink-600 hover:bg-pink-50 border border-pink-200'
-              }`}
+              className={`px-4 py-2 text-sm font-medium rounded-full transition-all duration-300 ${activeCategory === category
+                ? 'bg-pink-600 text-white shadow-sm'
+                : 'text-gray-600 hover:text-pink-600 hover:bg-pink-50 border border-pink-200'
+                }`}
             >
               {category}
             </button>
@@ -174,7 +173,7 @@ export default function LadiesPGAmenities() {
                     className="object-cover transition-transform duration-700 group-hover:scale-105"
                     sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 25vw"
                   />
-                  
+
                   {/* Icon Overlay */}
                   <div className="absolute top-4 left-4 bg-white/95 backdrop-blur-sm p-3 rounded-xl shadow-sm">
                     <IconComponent size={20} className="text-pink-600" strokeWidth={1.5} />
@@ -194,20 +193,18 @@ export default function LadiesPGAmenities() {
                     {amenity.category}
                   </div>
 
-                  <h3 className={`text-lg font-bold mb-3 transition-colors duration-300 ${
-                    hoveredAmenity === index ? 'text-pink-600' : 'text-black'
-                  }`}>
+                  <h3 className={`text-lg font-bold mb-3 transition-colors duration-300 ${hoveredAmenity === index ? 'text-pink-600' : 'text-black'
+                    }`}>
                     {amenity.title}
                   </h3>
-                  
+
                   <p className="text-gray-600 text-sm leading-relaxed">
                     {amenity.description}
                   </p>
                 </div>
 
-                <div className={`h-0.5 bg-pink-600 transition-all duration-500 ${
-                  hoveredAmenity === index ? 'w-full' : 'w-0'
-                }`} />
+                <div className={`h-0.5 bg-pink-600 transition-all duration-500 ${hoveredAmenity === index ? 'w-full' : 'w-0'
+                  }`} />
               </motion.div>
             )
           })}
@@ -223,7 +220,7 @@ export default function LadiesPGAmenities() {
           <h3 className="text-2xl font-bold text-black mb-6 text-center">
             Special Features for Women Residents
           </h3>
-          
+
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             <div className="text-center">
               <div className="w-16 h-16 bg-pink-100 rounded-2xl flex items-center justify-center mx-auto mb-4">

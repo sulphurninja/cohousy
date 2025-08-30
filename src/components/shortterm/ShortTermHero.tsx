@@ -16,16 +16,16 @@ const stats = [
 export default function ShortTermHero() {
   const containerRef = useRef<HTMLDivElement>(null)
   const isInView = useInView(containerRef, { once: true })
-  
+
   const { scrollYProgress } = useScroll({
     target: containerRef,
     offset: ["start start", "end start"]
   })
-  
+
   const imageY = useTransform(scrollYProgress, [0, 1], [0, -100])
 
   return (
-    <section 
+    <section
       ref={containerRef}
       className="relative pt-36 pb-16 lg:pb-24 bg-white overflow-hidden"
     >
@@ -43,7 +43,7 @@ export default function ShortTermHero() {
 
       <div className="container mx-auto px-6 relative z-10">
         <div className="grid lg:grid-cols-2 gap-16 items-center">
-          
+
           {/* Content Section */}
           <motion.div
             variants={withMotion(staggerContainer)}
@@ -96,9 +96,8 @@ export default function ShortTermHero() {
                 <span className="text-black font-medium">zero lock-in period</span>{' '}
                 and premium amenities near Eon IT Park and WTC Kharadi.
               </p>
-
               <p className="text-lg text-gray-600 leading-relaxed">
-                Book for days, weeks, or months with complete flexibility. 
+                Book for days, weeks, or months with complete flexibility.
                 Everything included from day one - just check in and focus on what matters.
               </p>
             </motion.div>
@@ -123,7 +122,7 @@ export default function ShortTermHero() {
             className="relative aspect-[4/5] overflow-hidden rounded-2xl"
           >
             <Image
-              src="/skyline.avif"
+              src="/short/Hero.jpg"
               alt="Flexible short-term accommodation at Cohousy Kharadi"
               fill
               className="object-cover transition-transform duration-700 hover:scale-105"

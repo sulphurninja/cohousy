@@ -11,7 +11,7 @@ const testimonials = [
     name: 'Rahul Sharma',
     role: 'Software Engineer at Barclays',
     location: 'From Delhi, Living since 1 year',
-    image: '/testimonial1.jpg',
+    image: '/male/Testimonial 1.jpg',
     rating: 5,
     text: 'Moving to Pune for my job at Eon IT Park was stressful, but Cohousy made it incredibly smooth. The 5-minute walk to office saves me so much time and the community here is amazing. I\'ve made great friends who are also in IT, and we often collaborate on projects.',
     highlight: 'Perfect location for IT professionals'
@@ -20,7 +20,8 @@ const testimonials = [
     name: 'Amit Patel',
     role: 'Data Analyst at Credit Suisse',
     location: 'From Gujarat, Living since 8 months',
-    image: '/testimonial2.jpg',
+     image: '/male/Testimonial 2.jpg',
+
     rating: 5,
     text: 'The single room option gave me the privacy I needed while the common areas helped me network with other professionals. The app is incredibly convenient - from paying rent to booking gym slots, everything is digital. The pricing is transparent with no hidden costs.',
     highlight: 'Great value and transparency'
@@ -29,7 +30,8 @@ const testimonials = [
     name: 'Vikash Kumar',
     role: 'Project Manager at TCS',
     location: 'From Bihar, Living since 6 months',
-    image: '/testimonial3.jpg',
+    image: '/male/Testimonial 3.jpg',
+
     rating: 5,
     text: 'What I love most is the professional environment. Everyone here is career-focused and supportive. The amenities are top-notch - high-speed Wi-Fi is perfect for my work from home days, and the gym helps me stay fit despite long work hours.',
     highlight: 'Professional environment'
@@ -38,29 +40,13 @@ const testimonials = [
     name: 'Arjun Reddy',
     role: 'DevOps Engineer at Honeywell',
     location: 'From Hyderabad, Living since 10 months',
-    image: '/testimonial4.jpg',
+    image: '/male/Testimonial 4.jpg',
+
     rating: 5,
     text: 'The community aspect is fantastic. We have weekend badminton sessions and gaming tournaments that help us unwind. The location near WTC is perfect, and the food quality is consistently good. It truly feels like a home away from home.',
     highlight: 'Amazing community vibes'
   },
-  {
-    name: 'Karan Singh',
-    role: 'Business Analyst at UBS',
-    location: 'From Rajasthan, Living since 5 months',
-    image: '/testimonial5.jpg',
-    rating: 5,
-    text: 'The digital experience through the app is brilliant. 24/7 property captain support has helped me multiple times, especially during my initial days. The shared spaces are well-maintained and the male-only environment creates a comfortable brotherhood.',
-    highlight: 'Excellent digital support'
-  },
-  {
-    name: 'Mayank Agarwal',
-    role: 'Full Stack Developer at Synechron',
-    location: 'From MP, Living since 9 months',
-    image: '/testimonial6.jpg',
-    rating: 5,
-    text: 'Coming from a smaller city, I was worried about finding good accommodation in Pune. Cohousy exceeded my expectations with its modern facilities and prime location. The networking opportunities here have actually helped my career growth significantly.',
-    highlight: 'Career growth support'
-  }
+
 ]
 
 export default function MalePGTestimonials() {

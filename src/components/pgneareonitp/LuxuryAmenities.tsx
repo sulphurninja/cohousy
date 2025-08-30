@@ -12,56 +12,56 @@ const amenities = [
     title: 'High-Speed Wi-Fi & Central Wi-Fi',
     description: 'Reliable connectivity for remote work at companies in Kharadi Pune, essential for hybrid roles and video conferences.',
     category: 'Connectivity',
-    image: '/a.jpg'
+    image: '/PG/High-Speed Wi-Fi.jpg'
   },
   {
     icon: Dumbbell,
     title: 'Common Gym & Badminton Courts',
     description: 'On-site fitness to unwind after long days, with modern equipment and recreational spaces for active lifestyle.',
     category: 'Fitness',
-    image: '/b.jpg'
+    image: '/PG/Ladies-Only Gym.jpg'
   },
   {
     icon: Home,
     title: 'Housekeeping & Room Cleaning',
     description: 'Daily services and common washing machines for hassle-free maintenance, perfect for busy IT professionals.',
     category: 'Maintenance',
-    image: '/c.jpg'
+    image: '/PG/Housekeeping & Room.jpg'
   },
   {
     icon: Utensils,
     title: 'Kitchen & Dining Essentials',
     description: 'Fully equipped shared kitchen, common fridge, floor-wise water purifier, and in-app food menu for nutritious meals.',
     category: 'Dining',
-    image: '/d.jpg'
+    image: '/PG/Kitchen& Dining.jpg'
   },
   {
     icon: Shield,
     title: 'Attached Washroom & Balcony',
     description: 'Private bathrooms and balconies in select rooms, plus common balconies for relaxation and fresh air.',
     category: 'Privacy',
-    image: '/e.jpg'
+    image: '/PG/Attached Washroom.jpg'
   },
   {
     icon: Zap,
     title: 'Power Backup',
     description: 'Uninterrupted electricity crucial during Pune\'s monsoons and for continuous work productivity.',
     category: 'Utilities',
-    image: '/z.jpg'
+    image: '/PG/Powerbackup.jpg'
   },
   {
     icon: Coffee,
     title: 'Common TV, Lounge & Lobby',
     description: 'Shared entertainment areas to build community vibes and connect with fellow professionals.',
     category: 'Recreation',
-    image: '/x.jpg'
+    image: '/PG/Common TV.jpg'
   },
   {
     icon: Car,
     title: 'Common Parking & First Aid',
     description: 'Secure parking spots (rare in busy Kharadi) plus immediate health support for peace of mind.',
     category: 'Convenience',
-    image: '/y.jpg'
+    image: '/PG/Common Parking.jpeg'
   }
 ]
 

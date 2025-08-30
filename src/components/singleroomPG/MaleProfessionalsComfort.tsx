@@ -101,7 +101,7 @@ export default function MaleProfessionalsComfort() {
             className="relative aspect-[4/5] overflow-hidden rounded-2xl"
           >
             <Image
-              src="/skyline.avif"
+              src="/single/Single Room PG Male.jpg"
               alt="Comfortable single room PG for male professionals in Kharadi"
               fill
               className="object-cover"

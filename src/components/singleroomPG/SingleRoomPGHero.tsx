@@ -16,16 +16,16 @@ const stats = [
 export default function SingleRoomPGHero() {
   const containerRef = useRef<HTMLDivElement>(null)
   const isInView = useInView(containerRef, { once: true })
-  
+
   const { scrollYProgress } = useScroll({
     target: containerRef,
     offset: ["start start", "end start"]
   })
-  
+
   const imageY = useTransform(scrollYProgress, [0, 1], [0, -100])
 
   return (
-    <section 
+    <section
       ref={containerRef}
       className="relative pt-36 pb-16 lg:pb-24 bg-white overflow-hidden"
     >
@@ -43,7 +43,7 @@ export default function SingleRoomPGHero() {
 
       <div className="container mx-auto px-6 relative z-10">
         <div className="grid lg:grid-cols-2 gap-16 items-center">
-          
+
           {/* Content Section */}
           <motion.div
             variants={withMotion(staggerContainer)}
@@ -96,8 +96,8 @@ export default function SingleRoomPGHero() {
               </p>
 
               <p className="text-lg text-gray-600 leading-relaxed">
-                Strategically located near Eon IT Park and WTC Kharadi, our accommodations blend comfort 
-                with convenience. Ideal for those seeking single room accommodation for male or female 
+                Strategically located near Eon IT Park and WTC Kharadi, our accommodations blend comfort
+                with convenience. Ideal for those seeking single room accommodation for male or female
                 professionals, we prioritize safety, modern amenities, and seamless living.
               </p>
             </motion.div>
@@ -122,7 +122,7 @@ export default function SingleRoomPGHero() {
             className="relative aspect-[4/5] overflow-hidden rounded-2xl"
           >
             <Image
-              src="/skyline.avif"
+              src="/single/Hero.jpg"
               alt="Luxury single room PG accommodation in Kharadi Pune"
               fill
               className="object-cover transition-transform duration-700 hover:scale-105"
@@ -145,12 +145,12 @@ export default function SingleRoomPGHero() {
             </div>
 
             {/* Privacy Badge */}
-            <div className="absolute top-1/2 left-8 transform -translate-y-1/2 bg-green-600/95 backdrop-blur-sm text-white p-4 rounded-xl shadow-lg">
+            {/* <div className="absolute top-1/2 left-8 transform -translate-y-1/2 bg-green-600/95 backdrop-blur-sm text-white p-4 rounded-xl shadow-lg">
               <div className="flex items-center space-x-2">
                 <Shield size={20} />
                 <span className="font-semibold">Secure & Private</span>
               </div>
-            </div>
+            </div> */}
           </motion.div>
         </div>
 

@@ -12,56 +12,56 @@ const amenities = [
     title: 'Ready-to-Occupy Rooms',
     description: 'Fully furnished rooms with premium bedding, wardrobe, and study area. Just bring your clothes!',
     category: 'Living',
-    image: '/a.jpg'
+    image: '/short/Ready-to-Occupy  Rooms.jpg'
   },
   {
     icon: Wifi,
     title: 'High-Speed Internet',
     description: 'Reliable Wi-Fi for video calls, remote work, and streaming. Perfect for business travelers.',
     category: 'Connectivity',
-    image: '/b.jpg'
+    image: '/short/High-Speed Internet.jpg'
   },
   {
     icon: Utensils,
     title: 'Meals Included',
     description: 'Daily breakfast, lunch, and dinner with vegetarian and non-vegetarian options.',
     category: 'Dining',
-    image: '/c.jpg'
+    image: '/short/Common  Kitchen Access.jpg'
   },
   {
     icon: Coffee,
     title: '24/7 Common Areas',
     description: 'Access to lounges, co-working spaces, and recreational areas at any time.',
     category: 'Common Areas',
-    image: '/d.jpg'
+    image: '/short/247 Common Area.jpg'
   },
   {
     icon: Dumbbell,
     title: 'Fitness Facilities',
     description: 'Gym and badminton court access to maintain your routine during short stays.',
     category: 'Fitness',
-    image: '/e.jpg'
+    image: '/short/Fitness Facilities.jpg'
   },
   {
     icon: Shield,
     title: 'Secure Environment',
     description: '24/7 security with CCTV monitoring and secure access for peace of mind.',
     category: 'Security',
-    image: '/z.jpg'
+    image: '/short/Secure Environment.jpg'
   },
   {
     icon: Car,
     title: 'Visitor Parking',
     description: 'Convenient parking for short-term guests with easy access to building.',
     category: 'Parking',
-    image: '/x.jpg'
+    image: '/short/Visitor Parking.jpg'
   },
   {
     icon: Smartphone,
     title: 'App Support',
     description: 'Digital services management through our app for seamless experience.',
     category: 'Technology',
-    image: '/y.jpg'
+    image: '/short/High-Speed Internet.jpg'
   }
 ]
 

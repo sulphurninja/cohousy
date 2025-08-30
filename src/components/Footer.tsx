@@ -153,7 +153,7 @@ export default function Footer() {
               className="lg:col-span-1"
             >
               <div className="flex items-center space-x-3 mb-6">
-               <img src='/logo.png' />
+               <img src='/white.png'  className='h-20'/>
               </div>
               
               <p className="text-gray-300 mb-6 leading-relaxed">
@@ -185,7 +185,7 @@ export default function Footer() {
                 variants={withMotion(fadeInUp)}
                 className="space-y-4"
               >
-                <h3 className="text-lg font-semibold text-accent">{category}</h3>
+                <h3 className="text-lg ml-6 font-semibold text-accent">{category}</h3>
                 <ul className="space-y-3">
                   {links.map((link, linkIndex) => (
                     <li key={linkIndex}>

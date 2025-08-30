@@ -11,7 +11,7 @@ const testimonials = [
     name: 'Priya Sharma',
     role: 'Software Engineer at Credit Suisse',
     location: 'From Delhi, Living since 8 months',
-    image: '/testimonial1.jpg',
+    image: '/ladies/Testimonial 1.jpg',
     rating: 5,
     text: 'Moving to Pune as a single woman was scary, but Cohousy made it feel like home from day one. The 24/7 female security and women-only environment gave my parents complete peace of mind. The location is perfect - just 5 minutes walk to my office at Eon IT Park!',
     highlight: 'Perfect for professional women'
@@ -20,7 +20,8 @@ const testimonials = [
     name: 'Sneha Patel',
     role: 'Business Analyst at Barclays',
     location: 'From Gujarat, Living since 1 year',
-    image: '/testimonial2.jpg',
+     image: '/ladies/Testimonial 2.jpg',
+
     rating: 5,
     text: 'What I love most is the supportive community of women here. We have regular networking sessions, and I\'ve made lifelong friendships. The single room with attached washroom gives me the privacy I need, while common areas help me socialize when I want to.',
     highlight: 'Amazing female community'
@@ -29,7 +30,8 @@ const testimonials = [
     name: 'Ananya Reddy',
     role: 'Project Manager at TCS',
     location: 'From Hyderabad, Living since 6 months',
-    image: '/testimonial3.jpg',
+    image: '/ladies/Testimonial 3.jpg',
+
     rating: 5,
     text: 'The safety features are incredible - panic buttons, family location sharing, and the app makes everything so convenient. My parents get regular safety updates, which keeps them happy. The hygiene standards are exceptional, especially important for women.',
     highlight: 'Outstanding safety measures'
@@ -38,29 +40,12 @@ const testimonials = [
     name: 'Kavya Nair',
     role: 'Data Scientist at Honeywell',
     location: 'From Kerala, Living since 4 months',
-    image: '/testimonial4.jpg',
+    image: '/ladies/Testimonial 4.jpg',
+
     rating: 5,
     text: 'As someone who values health and fitness, the ladies-only gym hours are fantastic! The healthy meal options and wellness sessions help maintain work-life balance. The location near WTC makes my commute stress-free.',
     highlight: 'Perfect wellness facilities'
   },
-  {
-    name: 'Ritika Gupta',
-    role: 'Marketing Executive at UBS',
-    location: 'From Rajasthan, Living since 10 months',
-    image: '/testimonial5.jpg',
-    rating: 5,
-    text: 'The digital experience is seamless - from booking to daily services, everything is on the app. The female property captain is always available for any women-specific concerns. It\'s like having a supportive sister managing everything!',
-    highlight: 'Tech-savvy and supportive'
-  },
-  {
-    name: 'Meera Singh',
-    role: 'Consultant at Allstate',
-    location: 'From Punjab, Living since 7 months',
-    image: '/testimonial6.jpg',
-    rating: 5,
-    text: 'The transparency in pricing and no hidden charges was refreshing. The family connect program where my parents receive safety updates and can video call the property gave them huge confidence in my choice to move here.',
-    highlight: 'Transparent and family-friendly'
-  }
 ]
 
 export default function LadiesPGTestimonials() {

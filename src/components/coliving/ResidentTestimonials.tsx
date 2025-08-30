@@ -13,7 +13,7 @@ const testimonials = [
     company: 'Eon IT Park Kharadi',
     rating: 5,
     text: 'Cohousy gave me the perfect blend of privacy and community. The location is unbeatable, and the amenities are top-notch. The app makes everything so easy—I\'ve made great friends through the events!',
-    image: '/a.jpg'
+    image: '/Co-living/Testimonial 1.jpg'
   },
   {
     name: 'Rahul K.',
@@ -21,7 +21,7 @@ const testimonials = [
     company: 'Synechron',
     rating: 5,
     text: 'As a newcomer to Pune, Cohousy\'s co-living in Kharadi helped me settle quickly. The security and proximity to WTC made it a no-brainer. The community events helped me network professionally too.',
-    image: '/b.jpg'
+    image: '/Co-living/Testimonial 2.jpg'
   },
   {
     name: 'Sneha M.',
@@ -29,7 +29,7 @@ const testimonials = [
     company: 'Tata Communications',
     rating: 5,
     text: 'The digital-first approach is exactly what I needed. From booking to payments, everything is seamless. The housekeeping and meal services save me so much time to focus on my career.',
-    image: '/c.jpg'
+    image: '/Co-living/Testimonial 3.jpg'
   },
   {
     name: 'Arjun P.',
@@ -37,7 +37,7 @@ const testimonials = [
     company: 'UBS',
     rating: 5,
     text: 'Moving from another city was stressful, but Cohousy made it smooth. The 5-minute walk to office is amazing, and the community here feels like family. Best co-living experience in Pune!',
-    image: '/d.jpg'
+        image: '/Co-living/Testimonial 4.jpg'
   }
 ]
 

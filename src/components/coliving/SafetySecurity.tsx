@@ -145,7 +145,7 @@ export default function SafetySecurity() {
             className="relative aspect-[4/5] overflow-hidden rounded-2xl"
           >
             <Image
-              src="/skyline.avif"
+              src="/Co-living/Peace of Mind Guaranteed.jpg"
               alt="Security and safety at Cohousy co-living spaces"
               fill
               className="object-cover"

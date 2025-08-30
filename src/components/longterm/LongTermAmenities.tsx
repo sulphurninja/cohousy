@@ -12,14 +12,14 @@ const amenities = [
     title: 'Fully Furnished Rooms',
     description: '1BHK/1RK with bed, wardrobe, study table, chair, and premium furnishing for immediate move-in comfort.',
     category: 'Living Space',
-    image: '/a.jpg'
+    image: '/long/Fully Furnished Room.jpg'
   },
   {
     icon: Wifi,
     title: 'High-Speed Internet',
     description: 'Dedicated high-speed Wi-Fi with backup connections, perfect for remote work and video calls.',
     category: 'Connectivity',
-    image: '/b.jpg'
+    image: '/long/High-Speed Internet.jpg'
   },
   {
     icon: Utensils,
@@ -33,35 +33,35 @@ const amenities = [
     title: 'Fitness & Recreation',
     description: 'Modern gym equipment, badminton court, and recreational areas for maintaining active lifestyle.',
     category: 'Fitness',
-    image: '/d.jpg'
+    image: '/long/Fitness & Recreation.jpg'
   },
   {
     icon: Car,
     title: 'Dedicated Parking',
     description: 'Reserved parking spaces for long-term residents with 24/7 security monitoring.',
     category: 'Parking',
-    image: '/e.jpg'
+    image: '/long/Dedicated Parking.jpg'
   },
   {
     icon: Shield,
     title: 'Premium Security',
     description: 'Biometric access, CCTV surveillance, and 24/7 security staff ensuring complete safety.',
     category: 'Security',
-    image: '/z.jpg'
+    image: '/long/Premium Security.jpg'
   },
   {
     icon: Laptop,
     title: 'Co-working Spaces',
     description: 'Dedicated work areas with ergonomic furniture and quiet environment for productivity.',
     category: 'Work',
-    image: '/x.jpg'
+    image: '/long/Co-working Space.jpg'
   },
   {
     icon: Coffee,
     title: 'Common Areas',
     description: 'Lounges, terrace gardens, and social spaces for relaxation and community interaction.',
     category: 'Community',
-    image: '/y.jpg'
+    image: '/long/Common Area.jpg'
   }
 ]
 

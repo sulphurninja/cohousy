@@ -12,7 +12,7 @@ const amenities = [
     title: 'Private Attached Washroom',
     description: 'Hygiene and convenience in your single room PG. No sharing, complete privacy with modern fittings and 24/7 hot water.',
     category: 'Privacy',
-    image: '/a.jpg'
+    image: '/PG/Attached Washroom.jpg'
   },
   {
     icon: Zap,
@@ -33,35 +33,36 @@ const amenities = [
     title: 'Housekeeping & Room Cleaning',
     description: 'Weekly services to keep spaces spotless. Professional cleaning maintaining hotel-like standards in your private room.',
     category: 'Maintenance',
-    image: '/d.jpg'
+    image: '/PG/Housekeeping & Room.jpg'
   },
   {
     icon: Utensils,
     title: 'Kitchen Essentials & Dining',
     description: 'Shared fridge and floor-wise water purifier. Access to common kitchen facilities for occasional cooking needs.',
     category: 'Dining',
-    image: '/e.jpg'
+    image: '/PG/Kitchen& Dining.jpg'
   },
   {
     icon: Dumbbell,
     title: 'Common Gym & Badminton Courts',
     description: 'On-site fitness to unwind after long days. Modern equipment and recreational spaces for active lifestyles.',
     category: 'Fitness',
-    image: '/z.jpg'
+    image: '/PG/Common Gym.jpg'
   },
   {
     icon: Coffee,
     title: 'Recreation & Common Areas',
     description: 'Common TV, balcony, and lobby for downtime. Social spaces to connect with fellow professionals when desired.',
     category: 'Recreation',
-    image: '/x.jpg'
+    image: '/PG/Common TV.jpg'
   },
   {
     icon: Car,
     title: 'Parking & Security',
     description: 'Common parking and first aid boxes add extra peace of mind. 24/7 guards and CCTV surveillance for complete safety.',
     category: 'Security',
-    image: '/y.jpg'
+    image: '/PG/Common Parking.jpeg'
+
   }
 ]
 
@@ -72,17 +73,17 @@ export default function TopAmenities() {
   const [hoveredAmenity, setHoveredAmenity] = useState<number | null>(null)
 
   const categories = ['All', ...Array.from(new Set(amenities.map(a => a.category)))]
-  const filteredAmenities = activeCategory === 'All' 
-    ? amenities 
+  const filteredAmenities = activeCategory === 'All'
+    ? amenities
     : amenities.filter(amenity => amenity.category === activeCategory)
 
   return (
-    <section 
+    <section
       ref={containerRef}
       className="py-section bg-white relative overflow-hidden"
     >
       <div className="container mx-auto px-6">
-        
+
         {/* Section Header */}
         <motion.div
           variants={withMotion(staggerContainer)}
@@ -112,8 +113,8 @@ export default function TopAmenities() {
             variants={withMotion(fadeInUp)}
             className="text-xl text-gray-600 font-light tracking-wide max-w-4xl mx-auto"
           >
-            Cohousy elevates single room PG in Kharadi Pune with premium features. Every room includes 
-            AC for year-round comfort, addressing "AC PG in Kharadi Pune" demands. These amenities 
+            Cohousy elevates single room PG in Kharadi Pune with premium features. Every room includes
+            AC for year-round comfort, addressing "AC PG in Kharadi Pune" demands. These amenities
             draw from our comprehensive offerings, catering to IT professionals near Eon IT Park.
           </motion.p>
         </motion.div>
@@ -129,11 +130,10 @@ export default function TopAmenities() {
             <button
               key={category}
               onClick={() => setActiveCategory(category)}
-              className={`px-4 py-2 text-sm font-medium rounded-full transition-all duration-300 ${
-                activeCategory === category
+              className={`px-4 py-2 text-sm font-medium rounded-full transition-all duration-300 ${activeCategory === category
                   ? 'bg-purple-600 text-white shadow-sm'
                   : 'text-gray-600 hover:text-purple-600 hover:bg-purple-50 border border-purple-200'
-              }`}
+                }`}
             >
               {category}
             </button>
@@ -166,7 +166,7 @@ export default function TopAmenities() {
                     className="object-cover transition-transform duration-700 group-hover:scale-105"
                     sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 25vw"
                   />
-                  
+
                   {/* Icon Overlay */}
                   <div className="absolute top-4 left-4 bg-white/95 backdrop-blur-sm p-3 rounded-xl shadow-sm">
                     <IconComponent size={20} className="text-purple-600" strokeWidth={1.5} />
@@ -179,20 +179,18 @@ export default function TopAmenities() {
                     {amenity.category}
                   </div>
 
-                  <h3 className={`text-lg font-bold mb-3 transition-colors duration-300 ${
-                    hoveredAmenity === index ? 'text-purple-600' : 'text-black'
-                  }`}>
+                  <h3 className={`text-lg font-bold mb-3 transition-colors duration-300 ${hoveredAmenity === index ? 'text-purple-600' : 'text-black'
+                    }`}>
                     {amenity.title}
                   </h3>
-                  
+
                   <p className="text-gray-600 text-sm leading-relaxed">
                     {amenity.description}
                   </p>
                 </div>
 
-                <div className={`h-0.5 bg-purple-600 transition-all duration-500 ${
-                  hoveredAmenity === index ? 'w-full' : 'w-0'
-                }`} />
+                <div className={`h-0.5 bg-purple-600 transition-all duration-500 ${hoveredAmenity === index ? 'w-full' : 'w-0'
+                  }`} />
               </motion.div>
             )
           })}
@@ -208,7 +206,7 @@ export default function TopAmenities() {
           <h3 className="text-2xl font-bold text-black mb-6 text-center">
             What Sets Our Single Room Amenities Apart
           </h3>
-          
+
           <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
             <div className="text-center">
               <Home size={32} className="text-purple-600 mx-auto mb-3" />

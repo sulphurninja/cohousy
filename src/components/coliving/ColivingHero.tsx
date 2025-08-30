@@ -16,16 +16,16 @@ const stats = [
 export default function ColivingHero() {
   const containerRef = useRef<HTMLDivElement>(null)
   const isInView = useInView(containerRef, { once: true })
-  
+
   const { scrollYProgress } = useScroll({
     target: containerRef,
     offset: ["start start", "end start"]
   })
-  
+
   const imageY = useTransform(scrollYProgress, [0, 1], [0, -100])
 
   return (
-    <section 
+    <section
       ref={containerRef}
       className="relative pt-36 pb-16 lg:pb-24 bg-white overflow-hidden"
     >
@@ -43,7 +43,7 @@ export default function ColivingHero() {
 
       <div className="container mx-auto px-6 relative z-10">
         <div className="grid lg:grid-cols-2 gap-16 items-center">
-          
+
           {/* Content Section */}
           <motion.div
             variants={withMotion(staggerContainer)}
@@ -124,7 +124,7 @@ export default function ColivingHero() {
             className="relative aspect-[4/5] overflow-hidden rounded-2xl"
           >
             <Image
-              src="/skyline.avif"
+              src="/Co-living/Hero.jpg"
               alt="Co-living community spaces at Cohousy Kharadi"
               fill
               className="object-cover transition-transform duration-700 hover:scale-105"

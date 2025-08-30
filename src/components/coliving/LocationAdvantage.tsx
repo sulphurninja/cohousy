@@ -49,12 +49,12 @@ export default function LocationAdvantage() {
   const [activeCategory, setActiveCategory] = useState(0)
 
   return (
-    <section 
+    <section
       ref={containerRef}
       className="py-section bg-white relative overflow-hidden"
     >
       <div className="container mx-auto px-6">
-        
+
         {/* Section Header */}
         <motion.div
           variants={withMotion(staggerContainer)}
@@ -84,14 +84,14 @@ export default function LocationAdvantage() {
             variants={withMotion(fadeInUp)}
             className="text-xl text-gray-600 font-light tracking-wide max-w-3xl mx-auto"
           >
-            Living in Cohousy's co-living Kharadi means everything is close by, enhancing your 
-            daily routine in Pune's IT heart. Our properties are ideally positioned for minimal 
+            Living in Cohousy's co-living Kharadi means everything is close by, enhancing your
+            daily routine in Pune's IT heart. Our properties are ideally positioned for minimal
             travel, with Eon IT Park just 5 mins away.
           </motion.p>
         </motion.div>
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
-          
+
           {/* Category Tabs and Places */}
           <motion.div
             variants={withMotion(staggerContainer)}
@@ -107,11 +107,10 @@ export default function LocationAdvantage() {
                   <button
                     key={index}
                     onClick={() => setActiveCategory(index)}
-                    className={`flex items-center gap-2 px-4 py-2 text-sm font-medium rounded-full transition-all duration-300 ${
-                      activeCategory === index
+                    className={`flex items-center gap-2 px-4 py-2 text-sm font-medium rounded-full transition-all duration-300 ${activeCategory === index
                         ? 'bg-gray-900 text-white shadow-sm'
                         : 'text-gray-600 hover:text-gray-900 hover:bg-gray-50 border border-gray-200'
-                    }`}
+                      }`}
                   >
                     <IconComponent size={16} />
                     {category.title}
@@ -143,42 +142,75 @@ export default function LocationAdvantage() {
             </div>
           </motion.div>
 
-          {/* Map/Location Visual */}
+          {/* Interactive Location Map */}
           <motion.div
-            initial={{ opacity: 0, x: 50 }}
-            animate={isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: 50 }}
-            transition={{ duration: 0.8, delay: 0.3 }}
-            className="relative aspect-[4/5] overflow-hidden rounded-2xl"
+            variants={withMotion(fadeInUp)}
+            className="relative aspect-[1/1] bg-white rounded-2xl overflow-hidden border border-gray-200 shadow-lg"
           >
-            <Image
-              src="/skyline.avif"
-              alt="Strategic location map of Cohousy in Kharadi"
-              fill
-              className="object-cover"
-              sizes="(max-width: 1024px) 100vw, 50vw"
+            {/* Google Maps Embed */}
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3782.1878899882404!2d73.9100897!3d18.565566099999998!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bc2c3bb9f17daa1%3A0x1a664f6f722abb15!2sShinde%20Sarkar%20%2301%20Complex!5e0!3m2!1sen!2sin!4v1742375299996!5m2!1sen!2sin"
+              width="100%"
+              height="100%"
+              style={{ border: 0 }}
+              allowFullScreen
+              loading="lazy"
+              referrerPolicy="no-referrer-when-downgrade"
+              title="Cohousy Location - Kharadi, Pune"
+              className="absolute inset-0"
             />
 
-            {/* Location Markers */}
-            <div className="absolute top-1/4 right-1/3 w-4 h-4 bg-accent rounded-full shadow-lg animate-pulse">
-              <div className="absolute -top-8 -left-8 bg-white/95 backdrop-blur-sm px-2 py-1 rounded text-xs font-semibold whitespace-nowrap">
-                Eon IT Park
-              </div>
-            </div>
-            <div className="absolute top-1/2 right-1/4 w-4 h-4 bg-accent rounded-full shadow-lg animate-pulse" style={{ animationDelay: '0.5s' }}>
-              <div className="absolute -top-8 -left-6 bg-white/95 backdrop-blur-sm px-2 py-1 rounded text-xs font-semibold whitespace-nowrap">
-                WTC
-              </div>
-            </div>
-            <div className="absolute bottom-1/3 right-1/5 w-4 h-4 bg-accent rounded-full shadow-lg animate-pulse" style={{ animationDelay: '1s' }}>
-              <div className="absolute -top-8 -left-10 bg-white/95 backdrop-blur-sm px-2 py-1 rounded text-xs font-semibold whitespace-nowrap">
-                Cohousy
+            {/* Overlay Information Panel */}
+            <div className="absolute inset-0 bg-gradient-to-r from-black/70 via-black/30 to-transparent pointer-events-none">
+              <div className="max-w-lg p-8 lg:p-12 text-white h-full flex flex-col justify-center">
+                <div className="bg-black/20 backdrop-blur-sm rounded-xl p-6 border border-white/10">
+                  <h3 className="text-2xl lg:text-3xl font-bold mb-4">
+                    Strategic Kharadi Location
+                  </h3>
+                  {/* <div className="space-y-2 mb-4">
+                      <p className="text-sm lg:text-base text-white/90 flex items-center">
+                        <span className="w-2 h-2 bg-accent rounded-full mr-2"></span>
+                        <strong>Coordinates:</strong> {18.565566099999998}°N, {73.9100897}°E
+                      </p>
+                      <p className="text-sm lg:text-base text-white/90 flex items-center">
+                        <span className="w-2 h-2 bg-green-400 rounded-full mr-2"></span>
+                        <strong>Address:</strong> Shinde Sarkar #01 Complex, Kharadi
+                      </p>
+                    </div> */}
+                  <p className="text-lg lg:text-xl text-white/90 mb-6 leading-relaxed">
+                    Positioned at the epicenter of Pune's IT corridor with unmatched
+                    connectivity to major business hubs.
+                  </p>
+                  <button
+                    onClick={() => window.open(`https://www.google.com/maps/place/${18.565566099999998},${73.9100897}`, '_blank')}
+                    className="bg-accent text-black px-6 py-3 font-semibold rounded-lg hover:shadow-lg hover:bg-accent/90 transition-all duration-300 pointer-events-auto inline-flex items-center space-x-2"
+                  >
+                    <span>Open in Google Maps</span>
+                    <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                    </svg>
+                  </button>
+                </div>
               </div>
             </div>
 
-            {/* Overlay Info */}
-            <div className="absolute bottom-6 left-6 bg-white/95 backdrop-blur-sm p-4 rounded-xl shadow-lg">
-              <div className="text-sm font-semibold text-black mb-1">Prime Location</div>
-              <div className="text-xs text-gray-600">Walking distance to 50+ IT companies</div>
+            {/* Location Markers/Pins for nearby places */}
+            <div className="absolute top-4 right-4 bg-white/90 backdrop-blur-sm rounded-lg p-3 shadow-lg pointer-events-none">
+              <div className="text-xs font-semibold text-gray-800 mb-1">Nearby IT Parks</div>
+              <div className="space-y-1">
+                <div className="flex items-center text-xs text-gray-600">
+                  <span className="w-2 h-2 bg-blue-500 rounded-full mr-2"></span>
+                  EON IT Park - 2km
+                </div>
+                <div className="flex items-center text-xs text-gray-600">
+                  <span className="w-2 h-2 bg-purple-500 rounded-full mr-2"></span>
+                  World Trade Center - 3km
+                </div>
+                <div className="flex items-center text-xs text-gray-600">
+                  <span className="w-2 h-2 bg-green-500 rounded-full mr-2"></span>
+                  Magarpatta City - 3km
+                </div>
+              </div>
             </div>
           </motion.div>
         </div>
@@ -195,7 +227,7 @@ export default function LocationAdvantage() {
               Excellent Connectivity
             </h3>
             <p className="text-gray-600 max-w-2xl mx-auto">
-              This location not only saves time but boosts safety with well-lit streets near 
+              This location not only saves time but boosts safety with well-lit streets near
               emergency services, making Cohousy perfect for solo or group living in Kharadi.
             </p>
           </div>
