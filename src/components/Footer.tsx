@@ -4,13 +4,13 @@ import { useRef } from 'react'
 import { motion, useInView } from 'framer-motion'
 import Image from 'next/image'
 import Link from 'next/link'
-import { 
-  MapPin, 
-  Phone, 
-  Mail, 
-  Facebook, 
-  Instagram, 
-  Linkedin, 
+import {
+  MapPin,
+  Phone,
+  Mail,
+  Facebook,
+  Instagram,
+  Linkedin,
   Twitter,
   Download,
   Star,
@@ -66,9 +66,9 @@ const socialLinks = [
 
 const contactInfo = {
   address: 'Kharadi, Pune, Maharashtra 411014',
-  phone: '+91 XXXXX XXXXX',
-  email: 'hello@cohousy.com',
-  whatsapp: '+91 XXXXX XXXXX'
+  phone: '+91 8908903900',
+  email: 'info.cohousy@gmail.com',
+  whatsapp: '+91 8908903900'
 }
 
 const quickStats = [
@@ -83,7 +83,7 @@ export default function Footer() {
   const isInView = useInView(containerRef, { once: true, margin: "-10%" })
 
   return (
-    <footer 
+    <footer
       ref={containerRef}
       className="relative bg-gray-900 text-white overflow-hidden"
     >
@@ -146,7 +146,7 @@ export default function Footer() {
 
           {/* Main Footer Links Grid */}
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8 mb-12">
-            
+
             {/* Brand Section */}
             <motion.div
               variants={withMotion(fadeInUp)}
@@ -155,9 +155,9 @@ export default function Footer() {
               <div className="flex items-center space-x-3 mb-6">
                <img src='/white.png'  className='h-20'/>
               </div>
-              
+
               <p className="text-gray-300 mb-6 leading-relaxed">
-                Redefining urban living with premium co-living spaces in Kharadi's tech hub. 
+                Redefining urban living with premium co-living spaces in Kharadi's tech hub.
                 Modern amenities, vibrant community, digital-first experience.
               </p>
 
@@ -214,7 +214,7 @@ export default function Footer() {
                   Get the Cohousy App
                 </h3>
                 <p className="text-gray-300 mb-6">
-                  100% digital experience - from booking to community events, 
+                  100% digital experience - from booking to community events,
                   manage everything seamlessly with our smart app.
                 </p>
                 <div className="flex flex-col sm:flex-row gap-4">
@@ -228,7 +228,7 @@ export default function Footer() {
                   </button>
                 </div>
               </div>
-              
+
               <div className="text-center lg:text-right">
                 <div className="inline-block p-4 bg-accent/10 rounded-2xl">
                   <div className="text-3xl font-bold text-accent mb-2">4.8★</div>
@@ -262,7 +262,7 @@ export default function Footer() {
                 )
               })}
             </div>
-            
+
             <div className="text-sm text-gray-400">
               Join our community of <span className="text-accent font-semibold">500+</span> professionals
             </div>
@@ -281,7 +281,7 @@ export default function Footer() {
               <div className="text-sm text-gray-400">
                 © 2025 Cohousy. All rights reserved. | Transforming urban living in Pune since 2024.
               </div>
-              
+
               <div className="flex items-center space-x-6 text-sm">
                 <Link href="/privacy-policy" className="text-gray-400 hover:text-accent transition-colors duration-300">
                   Privacy Policy
@@ -301,10 +301,10 @@ export default function Footer() {
             {/* Additional SEO Links */}
             <div className="mt-6 pt-6 border-t border-gray-800">
               <div className="text-xs text-gray-500 leading-relaxed">
-                <strong>Popular Searches:</strong> PG in Kharadi Pune, Co-living spaces near Eon IT Park, 
-                Ladies PG Kharadi, Male PG accommodation Kharadi, Single room PG near WTC Kharadi, 
-                Shared accommodation IT professionals Pune, Premium PG with amenities Kharadi, 
-                Safe accommodation for women Pune, Boys hostel near Eon IT Park, 
+                <strong>Popular Searches:</strong> PG in Kharadi Pune, Co-living spaces near Eon IT Park,
+                Ladies PG Kharadi, Male PG accommodation Kharadi, Single room PG near WTC Kharadi,
+                Shared accommodation IT professionals Pune, Premium PG with amenities Kharadi,
+                Safe accommodation for women Pune, Boys hostel near Eon IT Park,
                 Furnished rooms Kharadi Pune, Budget PG accommodation near IT companies.
               </div>
             </div>

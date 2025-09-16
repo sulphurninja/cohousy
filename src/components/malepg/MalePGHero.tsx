@@ -5,6 +5,7 @@ import { motion, useInView, useScroll, useTransform } from 'framer-motion'
 import Image from 'next/image'
 import { Users, Home, MapPin, Star } from 'lucide-react'
 import { staggerContainer, fadeInUp, splitLineReveal, withMotion } from '@/lib/motion'
+import ContactFormDialog from '../ContactFormDialog'
 
 const stats = [
   { value: '100%', label: 'Male Only', icon: Users },
@@ -16,16 +17,16 @@ const stats = [
 export default function MalePGHero() {
   const containerRef = useRef<HTMLDivElement>(null)
   const isInView = useInView(containerRef, { once: true })
-  
+
   const { scrollYProgress } = useScroll({
     target: containerRef,
     offset: ["start start", "end start"]
   })
-  
+
   const imageY = useTransform(scrollYProgress, [0, 1], [0, -100])
 
   return (
-    <section 
+    <section
       ref={containerRef}
       className="relative pt-36 pb-16 lg:pb-24 bg-white overflow-hidden"
     >
@@ -43,7 +44,7 @@ export default function MalePGHero() {
 
       <div className="container mx-auto px-6 relative z-10">
         <div className="grid lg:grid-cols-2 gap-16 items-center">
-          
+
           {/* Content Section */}
           <motion.div
             variants={withMotion(staggerContainer)}
@@ -91,15 +92,15 @@ export default function MalePGHero() {
             >
               <p className="text-xl leading-relaxed text-gray-700">
                 Are you a male professional searching for reliable{' '}
-                <span className="text-blue-600 font-semibold">PG in Kharadi Pune for male residents</span>? 
+                <span className="text-blue-600 font-semibold">PG in Kharadi Pune for male residents</span>?
                 Cohousy offers premium boys accommodation tailored for{' '}
                 <span className="text-black font-medium">IT professionals and working men</span>{' '}
                 in the bustling Kharadi area.
               </p>
 
               <p className="text-lg text-gray-600 leading-relaxed">
-                Located near Eon IT Park and WTC Kharadi, our male PG options provide comfort, 
-                security, and convenience without the hassle of traditional rentals. Single and 
+                Located near Eon IT Park and WTC Kharadi, our male PG options provide comfort,
+                security, and convenience without the hassle of traditional rentals. Single and
                 shared rooms with modern amenities and community-focused environment.
               </p>
             </motion.div>
@@ -109,9 +110,18 @@ export default function MalePGHero() {
               variants={withMotion(fadeInUp)}
               className="flex flex-col sm:flex-row gap-4 mt-8"
             >
-              <button className="px-8 py-4 bg-blue-600 text-white font-semibold rounded-lg hover:shadow-lg transition-all duration-300">
-                Book Boys Accommodation
-              </button>
+              <ContactFormDialog
+                title="Schedule a Visit"
+                description="Book a visit to see the property in person."
+                serviceType="Schedule Visit"
+                trigger={
+                  <div className='flex justify-center'>
+                    <button className="flex-1 bg-blue-500 text-white py-2 px-4 rounded-lg hover:bg-blue-600 w-fit transition-colors text-sm">
+                      Book Boys Accommodation
+                    </button>
+                  </div>
+                }
+              />
               <button className="px-8 py-4 border-2 border-gray-900 text-gray-900 font-semibold rounded-lg hover:bg-gray-900 hover:text-white transition-all duration-300">
                 View Room Options
               </button>

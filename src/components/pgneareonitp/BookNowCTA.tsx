@@ -6,6 +6,7 @@ import { Phone, Calendar, MapPin, Download, Star, Clock } from 'lucide-react'
 import Image from 'next/image'
 import Link from 'next/link'
 import { staggerContainer, fadeInUp, withMotion } from '@/lib/motion'
+import ContactFormDialog from '../ContactFormDialog'
 
 const quickStats = [
     { icon: Clock, value: '5 Min', label: 'Walk to Eon IT Park' },
@@ -89,11 +90,18 @@ export default function BookNowCTA() {
                         variants={withMotion(fadeInUp)}
                         className="flex flex-col sm:flex-row gap-6 justify-center mb-12"
                     >
-                        <button className="group relative px-12 py-4 bg-orange-600 text-white font-bold text-lg rounded-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105">
-                            <Calendar size={20} className="inline mr-3" />
-                            Book Walking Distance PG Now
-                            <div className="absolute inset-0 bg-black/10 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-                        </button>
+                        <ContactFormDialog
+                            title="Schedule a Visit"
+                            description="Book a visit to see the property in person."
+                            serviceType="Schedule Visit"
+                            trigger={
+                                <div className='flex justify-center'>
+                                    <button className="flex-1 bg-orange-500 text-white py-2 px-4 rounded-lg hover:bg-orange-600 w-fit transition-colors text-sm">
+                                        Schedule Visit
+                                    </button>
+                                </div>
+                            }
+                        />
 
                         <button className="group relative px-12 py-4 border-3 border-orange-600 text-orange-600 font-bold text-lg rounded-lg hover:bg-orange-600 hover:text-white transition-all duration-300 transform hover:scale-105">
                             <Phone size={20} className="inline mr-3" />

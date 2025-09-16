@@ -5,6 +5,7 @@ import { motion, useInView, useScroll, useTransform } from 'framer-motion'
 import { MapPin, Shield, Users, Home, Smartphone, Train } from 'lucide-react'
 import Image from 'next/image'
 import { staggerContainer, fadeInUp, withMotion } from '@/lib/motion'
+import ContactFormDialog from './ContactFormDialog'
 
 const benefits = [
   {
@@ -20,7 +21,7 @@ const benefits = [
     delay: 0.1
   },
   {
-    title: 'Community Living', 
+    title: 'Community Living',
     description: 'Thoughtfully designed shared spaces and community events foster meaningful connections and professional networking.',
     icon: Users,
     delay: 0.2
@@ -49,16 +50,16 @@ export default function WhyChooseSection() {
   const containerRef = useRef<HTMLDivElement>(null)
   const isInView = useInView(containerRef, { once: true, margin: "-20%" })
   const [hoveredBenefit, setHoveredBenefit] = useState<number | null>(null)
-  
+
   const { scrollYProgress } = useScroll({
     target: containerRef,
     offset: ["start end", "end start"]
   })
-  
+
   const imageY = useTransform(scrollYProgress, [0, 1], [0, -50])
 
   return (
-    <section 
+    <section
       ref={containerRef}
       className="py- bg-white relative overflow-hidden"
     >
@@ -72,7 +73,7 @@ export default function WhyChooseSection() {
 
       <div className="container mx-auto px-6">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-          
+
           {/* Clean Image Section */}
           <motion.div
             style={{ y: imageY }}
@@ -85,7 +86,7 @@ export default function WhyChooseSection() {
               className="object-cover transition-transform duration-700 hover:scale-105"
               sizes="(max-width: 1024px) 100vw, 50vw"
             />
-            
+
             {/* Clean Stats Overlay */}
             <div className="absolute top-8 right-8 bg-white/95 backdrop-blur-sm p-6 rounded-xl shadow-lg border border-white/20">
               <div className="text-center">
@@ -123,13 +124,13 @@ export default function WhyChooseSection() {
               </h2>
 
               <p className="text-xl text-gray-600 font-light tracking-wide leading-relaxed">
-                Experience premium co-living in Kharadi's tech hub, where modern amenities 
+                Experience premium co-living in Kharadi's tech hub, where modern amenities
                 meet professional community living, all designed around your lifestyle needs.
               </p>
             </motion.div>
 
             {/* Clean Benefits List */}
-            <motion.div 
+            <motion.div
               variants={withMotion(staggerContainer)}
               className="space-y-6"
             >
@@ -144,30 +145,27 @@ export default function WhyChooseSection() {
                     className="group flex items-start space-x-6 cursor-pointer p-4 rounded-xl hover:bg-gray-50 transition-all duration-300"
                   >
                     {/* Professional Icon */}
-                    <div className={`flex-shrink-0 p-3 rounded-xl transition-all duration-300 ${
-                      hoveredBenefit === index 
-                        ? 'bg-accent text-black shadow-lg' 
+                    <div className={`flex-shrink-0 p-3 rounded-xl transition-all duration-300 ${hoveredBenefit === index
+                        ? 'bg-accent text-black shadow-lg'
                         : 'bg-gray-100 text-gray-600'
-                    }`}>
+                      }`}>
                       <IconComponent size={24} strokeWidth={1.5} />
                     </div>
 
                     <div className="flex-1">
-                      <h3 className={`text-xl font-bold mb-3 transition-colors duration-300 ${
-                        hoveredBenefit === index ? 'text-accent' : 'text-black'
-                      }`}>
+                      <h3 className={`text-xl font-bold mb-3 transition-colors duration-300 ${hoveredBenefit === index ? 'text-accent' : 'text-black'
+                        }`}>
                         {benefit.title}
                       </h3>
-                      
+
                       <p className="text-gray-600 leading-relaxed">
                         {benefit.description}
                       </p>
                     </div>
 
                     {/* Clean Arrow Indicator */}
-                    <div className={`transition-all duration-300 ${
-                      hoveredBenefit === index ? 'opacity-100 translate-x-1' : 'opacity-0'
-                    }`}>
+                    <div className={`transition-all duration-300 ${hoveredBenefit === index ? 'opacity-100 translate-x-1' : 'opacity-0'
+                      }`}>
                       <svg className="w-5 h-5 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
                       </svg>
@@ -180,9 +178,18 @@ export default function WhyChooseSection() {
             {/* Clean CTA Section */}
             <motion.div variants={withMotion(fadeInUp)} className="pt-8">
               <div className="flex flex-col sm:flex-row gap-4">
-                <button className="px-8 py-3 bg-accent text-black font-semibold rounded-lg hover:shadow-lg transition-all duration-300">
-                  Schedule a Visit
-                </button>
+                <ContactFormDialog
+                  title="Schedule a Visit"
+                  description="Book a visit to see the property in person."
+                  serviceType="Schedule Visit"
+                  trigger={
+                    <div className='flex justify-center'>
+                      <button className="flex-1 bg-orange-500 text-white py-2 px-4 rounded-lg hover:bg-orange-600 w-fit transition-colors text-sm">
+                        Schedule Visit
+                      </button>
+                    </div>
+                  }
+                />
                 <button className="px-8 py-3 border-2 border-gray-900 text-gray-900 font-semibold rounded-lg hover:bg-gray-900 hover:text-white transition-all duration-300">
                   Learn More
                 </button>

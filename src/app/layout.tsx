@@ -102,7 +102,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
               addressCountry: 'IN',
             },
             areaServed: 'Pune',
-            telephone: '+91-0000000000',
+            telephone: '+918908903900',
             sameAs: [
               'https://www.facebook.com/',
               'https://www.instagram.com/',

@@ -4,6 +4,7 @@ import { useEffect, useState } from 'react'
 import Image from 'next/image'
 import { useRouter } from 'next/navigation'
 import { ArrowLeft } from 'lucide-react'
+import ContactFormDialog from '@/components/ContactFormDialog'
 
 export default function PropertyDetails({ params }: { params: { id: string } }) {
     const [property, setProperty] = useState<any>(null)
@@ -142,46 +143,47 @@ export default function PropertyDetails({ params }: { params: { id: string } }) 
                         {/* Contact Form */}
                         <div className="bg-white rounded-xl shadow-lg p-6 mb-8 sticky top-24">
                             <h3 className="text-xl font-bold text-gray-800 mb-4">Get in Touch</h3>
-                            <form className="space-y-4">
-                                <input
-                                    type="text"
-                                    placeholder="Your Name"
-                                    className="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-500"
-                                />
-                                <input
-                                    type="email"
-                                    placeholder="Your Email"
-                                    className="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-500"
-                                />
-                                <input
-                                    type="tel"
-                                    placeholder="Your Phone"
-                                    className="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-500"
-                                />
-                                <textarea
-                                    placeholder="Your Message"
-                                    rows={4}
-                                    className="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-500"
-                                />
-                                <button
-                                    type="submit"
-                                    className="w-full bg-orange-500 text-white py-3 rounded-lg hover:bg-orange-600 transition-colors font-semibold"
-                                >
-                                    Send Message
-                                </button>
-                            </form>
+
+                            <ContactFormDialog
+                                title={`Inquire About ${property.name}`}
+                                description="Fill out the form below and we'll get back to you within 24 hours with availability and pricing details."
+                                serviceType="Property Inquiry"
+                                propertyName={property.name}
+                                trigger={
+                                    <button className="w-full bg-orange-500 text-white py-3 rounded-lg hover:bg-orange-600 transition-colors font-semibold">
+                                        Send Inquiry
+                                    </button>
+                                }
+                            />
 
                             <div className="mt-6 pt-6 border-t">
                                 <div className="flex gap-3">
-                                    <button className="flex-1 bg-orange-500 text-white py-2 px-4 rounded-lg hover:bg-orange-600 transition-colors text-sm">
-                                        Schedule Visit
-                                    </button>
-                                    <button className="flex-1 border-2 border-orange-500 text-orange-500 py-2 px-4 rounded-lg hover:bg-orange-50 transition-colors text-sm">
-                                        Request Callback
-                                    </button>
+                                    <ContactFormDialog
+                                        title="Schedule a Visit"
+                                        description="Book a visit to see the property in person."
+                                        serviceType="Schedule Visit"
+                                        propertyName={property.name}
+                                        trigger={
+                                            <button className="flex-1 bg-orange-500 text-white py-2 px-4 rounded-lg hover:bg-orange-600 transition-colors text-sm">
+                                                Schedule Visit
+                                            </button>
+                                        }
+                                    />
+                                    <ContactFormDialog
+                                        title="Request Callback"
+                                        description="Request a callback and our team will call you at your preferred time."
+                                        serviceType="Request Callback"
+                                        propertyName={property.name}
+                                        trigger={
+                                            <button className="flex-1 border-2 border-orange-500 text-orange-500 py-2 px-4 rounded-lg hover:bg-orange-50 transition-colors text-sm">
+                                                Request Callback
+                                            </button>
+                                        }
+                                    />
                                 </div>
                             </div>
                         </div>
+
 
 
                         {/* Nearby Places */}

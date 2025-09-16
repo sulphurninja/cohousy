@@ -4,6 +4,7 @@ import { useRef, useState } from 'react'
 import { motion, useInView } from 'framer-motion'
 import { Plus, Minus, HelpCircle } from 'lucide-react'
 import { staggerContainer, fadeInUp, withMotion } from '@/lib/motion'
+import ContactFormDialog from '../ContactFormDialog'
 
 const faqs = [
   {
@@ -50,12 +51,12 @@ export default function ShortTermFAQ() {
   }
 
   return (
-    <section 
+    <section
       ref={containerRef}
       className="py-section bg-white relative overflow-hidden"
     >
       <div className="container mx-auto px-6">
-        
+
         {/* Section Header */}
         <motion.div
           variants={withMotion(staggerContainer)}
@@ -85,7 +86,7 @@ export default function ShortTermFAQ() {
             variants={withMotion(fadeInUp)}
             className="text-xl text-gray-600 font-light tracking-wide max-w-3xl mx-auto"
           >
-            Get answers to common questions about our flexible short-term accommodation options, 
+            Get answers to common questions about our flexible short-term accommodation options,
             booking process, and policies designed for maximum convenience.
           </motion.p>
         </motion.div>
@@ -118,7 +119,7 @@ export default function ShortTermFAQ() {
                   )}
                 </div>
               </button>
-              
+
               <motion.div
                 initial={false}
                 animate={{
@@ -147,13 +148,22 @@ export default function ShortTermFAQ() {
             Need Immediate Accommodation?
           </h3>
           <p className="text-gray-600 mb-6 max-w-2xl mx-auto">
-            Our team is available 24/7 to help with urgent bookings, same-day check-ins, 
+            Our team is available 24/7 to help with urgent bookings, same-day check-ins,
             and any special requirements for your short-term stay.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <button className="px-8 py-3 bg-accent text-black font-semibold rounded-lg hover:shadow-lg transition-all duration-300">
-              Book Now - 24/7
-            </button>
+            <ContactFormDialog
+              title="Book Now"
+              description="Book a visit to see the property in person."
+              serviceType="Schedule Visit"
+              trigger={
+                <div className='flex justify-center'>
+                  <button className="flex-1 bg-orange-500 text-white py-2 px-4 rounded-lg hover:bg-orange-600 w-fit transition-colors text-sm">
+                    Schedule Visit
+                  </button>
+                </div>
+              }
+            />
             <button className="px-8 py-3 border-2 border-gray-900 text-gray-900 font-semibold rounded-lg hover:bg-gray-900 hover:text-white transition-all duration-300">
               Call for Same-day
             </button>

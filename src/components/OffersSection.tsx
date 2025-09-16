@@ -5,6 +5,7 @@ import { motion, useInView, useScroll, useTransform } from 'framer-motion'
 import Image from 'next/image'
 import Link from 'next/link'
 import { staggerContainer, fadeInUp, withMotion } from '@/lib/motion'
+import ContactFormDialog from './ContactFormDialog'
 
 const offers = [
   {
@@ -67,16 +68,16 @@ export default function OffersSection() {
   const containerRef = useRef<HTMLDivElement>(null)
   const isInView = useInView(containerRef, { once: true, margin: "-10%" })
   const [hoveredOffer, setHoveredOffer] = useState<number | null>(null)
-  
+
   const { scrollYProgress } = useScroll({
     target: containerRef,
     offset: ["start end", "end start"]
   })
-  
+
   const headerY = useTransform(scrollYProgress, [0, 0.3], [50, -50])
 
   return (
-    <section 
+    <section
       ref={containerRef}
       id="offers"
       className="py-section bg-white relative overflow-hidden"
@@ -90,7 +91,7 @@ export default function OffersSection() {
       </div>
 
       <div className="container mx-auto px-6 relative">
-        
+
         {/* Clean Section Header */}
         <motion.div
           style={{ y: headerY }}
@@ -121,7 +122,7 @@ export default function OffersSection() {
             variants={withMotion(fadeInUp)}
             className="text-xl text-gray-600 font-light tracking-wide max-w-3xl mx-auto"
           >
-            Choose from our premium accommodation options in Kharadi's tech hub, 
+            Choose from our premium accommodation options in Kharadi's tech hub,
             each designed to meet different lifestyle and duration needs.
           </motion.p>
         </motion.div>
@@ -157,7 +158,7 @@ export default function OffersSection() {
                   className="object-cover transition-transform duration-700 group-hover:scale-105"
                   sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                 />
-                
+
                 {/* Simple Price Badge */}
                 <div className="absolute top-6 left-6 z-10 bg-white/95 backdrop-blur-sm text-black px-4 py-2 rounded-lg shadow-sm border border-white/20">
                   <span className="font-bold text-lg">{offer.price}</span>
@@ -165,9 +166,8 @@ export default function OffersSection() {
                 </div>
 
                 {/* Clean overlay on hover */}
-                <div className={`absolute inset-0 bg-black/20 transition-opacity duration-500 ${
-                  hoveredOffer === offer.id ? 'opacity-100' : 'opacity-0'
-                }`} />
+                <div className={`absolute inset-0 bg-black/20 transition-opacity duration-500 ${hoveredOffer === offer.id ? 'opacity-100' : 'opacity-0'
+                  }`} />
               </div>
 
               {/* Clean Content */}
@@ -175,7 +175,7 @@ export default function OffersSection() {
                 <h3 className="text-2xl font-bold text-black mb-4 group-hover:text-accent transition-colors duration-300">
                   {offer.title}
                 </h3>
-                
+
                 <p className="text-gray-600 mb-6 leading-relaxed">
                   {offer.description}
                 </p>
@@ -202,9 +202,8 @@ export default function OffersSection() {
               </div>
 
               {/* Subtle hover accent */}
-              <div className={`absolute bottom-0 left-0 h-0.5 bg-accent transition-all duration-500 ${
-                hoveredOffer === offer.id ? 'w-full' : 'w-0'
-              }`} />
+              <div className={`absolute bottom-0 left-0 h-0.5 bg-accent transition-all duration-500 ${hoveredOffer === offer.id ? 'w-full' : 'w-0'
+                }`} />
             </motion.div>
           ))}
         </motion.div>
@@ -220,11 +219,18 @@ export default function OffersSection() {
             Ready to experience premium living in Kharadi's tech hub?
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Link href="/contact">
-              <button className="px-8 py-3 bg-accent cursor-pointer text-black font-semibold rounded-lg hover:shadow-lg transition-all duration-300">
-                Schedule a Visit
-              </button>
-            </Link>
+            <ContactFormDialog
+              title="Schedule a Visit"
+              description="Book a visit to see the property in person."
+              serviceType="Schedule Visit"
+              trigger={
+                <div className='flex justify-center'>
+                  <button className="flex-1 bg-orange-500 text-white py-2 px-4 rounded-lg hover:bg-orange-600 w-fit transition-colors text-sm">
+                    Schedule Visit
+                  </button>
+                </div>
+              }
+            />
             <Link href="/brochure">
               <button className="px-8 py-3 border-2 cursor-pointer border-gray-900 text-gray-900 font-semibold rounded-lg hover:bg-gray-900 hover:text-white transition-all duration-300">
                 Download Brochure

@@ -5,6 +5,7 @@ import { motion, useInView, useScroll, useTransform } from 'framer-motion'
 import Image from 'next/image'
 import { Shield, Home, Users, Star } from 'lucide-react'
 import { staggerContainer, fadeInUp, splitLineReveal, withMotion } from '@/lib/motion'
+import ContactFormDialog from '../ContactFormDialog'
 
 const stats = [
   { value: '100%', label: 'Female Only', icon: Users },
@@ -16,16 +17,16 @@ const stats = [
 export default function LadiesPGHero() {
   const containerRef = useRef<HTMLDivElement>(null)
   const isInView = useInView(containerRef, { once: true })
-  
+
   const { scrollYProgress } = useScroll({
     target: containerRef,
     offset: ["start start", "end start"]
   })
-  
+
   const imageY = useTransform(scrollYProgress, [0, 1], [0, -100])
 
   return (
-    <section 
+    <section
       ref={containerRef}
       className="relative pt-36 pb-16 lg:pb-24 bg-white overflow-hidden"
     >
@@ -43,7 +44,7 @@ export default function LadiesPGHero() {
 
       <div className="container mx-auto px-6 relative z-10">
         <div className="grid lg:grid-cols-2 gap-16 items-center">
-          
+
           {/* Content Section */}
           <motion.div
             variants={withMotion(staggerContainer)}
@@ -92,14 +93,14 @@ export default function LadiesPGHero() {
               <p className="text-xl leading-relaxed text-gray-700">
                 Are you a working professional or student searching for a{' '}
                 <span className="text-pink-600 font-semibold">safe, comfortable, and convenient ladies PG</span>{' '}
-                in Kharadi Pune? Cohousy specializes in providing premium female accommodation 
+                in Kharadi Pune? Cohousy specializes in providing premium female accommodation
                 tailored to the needs of modern women in{' '}
                 <span className="text-black font-medium">Pune's fastest-growing IT hub</span>.
               </p>
 
               <p className="text-lg text-gray-600 leading-relaxed">
-                Located in the heart of Kharadi with easy access to Eon IT Park and WTC, 
-                our ladies PG offers the perfect blend of luxury, security, and community living 
+                Located in the heart of Kharadi with easy access to Eon IT Park and WTC,
+                our ladies PG offers the perfect blend of luxury, security, and community living
                 that ensures peace of mind for you and your family.
               </p>
             </motion.div>
@@ -109,9 +110,18 @@ export default function LadiesPGHero() {
               variants={withMotion(fadeInUp)}
               className="flex flex-col sm:flex-row gap-4 mt-8"
             >
-              <button className="px-8 py-4 bg-pink-600 text-white font-semibold rounded-lg hover:shadow-lg transition-all duration-300">
-                Book Safe Accommodation
-              </button>
+              <ContactFormDialog
+                title="Schedule a Visit"
+                description="Book a visit to see the property in person."
+                serviceType="Schedule Visit"
+                trigger={
+                  <div className='flex justify-center'>
+                    <button className="flex-1 bg-pink-500 text-white py-2 px-4 rounded-lg hover:bg-pink-600 w-fit transition-colors text-sm">
+                      Schedule Visit
+                    </button>
+                  </div>
+                }
+              />
               <button className="px-8 py-4 border-2 border-gray-900 text-gray-900 font-semibold rounded-lg hover:bg-gray-900 hover:text-white transition-all duration-300">
                 Schedule Ladies-Only Tour
               </button>

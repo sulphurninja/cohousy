@@ -5,6 +5,7 @@ import { motion, useInView, useScroll, useTransform } from 'framer-motion'
 import { MapPin, Building2, Train, ShoppingBag, Wifi, Dumbbell, Coffee, Shield, Car, Utensils, Laptop, Users } from 'lucide-react'
 import Image from 'next/image'
 import { staggerContainer, fadeInUp, withMotion } from '@/lib/motion'
+import ContactFormDialog from './ContactFormDialog'
 
 const locationHighlights = [
   {
@@ -155,8 +156,8 @@ export default function LocationAmenitiesSection() {
             <button
               onClick={() => setActiveTab('location')}
               className={`px-8 py-3 font-semibold transition-all duration-300 ${activeTab === 'location'
-                  ? 'bg-gray-900 text-white'
-                  : 'bg-white text-gray-600 hover:text-gray-900 hover:bg-gray-50'
+                ? 'bg-gray-900 text-white'
+                : 'bg-white text-gray-600 hover:text-gray-900 hover:bg-gray-50'
                 }`}
             >
               <MapPin size={18} className="inline mr-2" />
@@ -165,8 +166,8 @@ export default function LocationAmenitiesSection() {
             <button
               onClick={() => setActiveTab('amenities')}
               className={`px-8 py-3 font-semibold transition-all duration-300 ${activeTab === 'amenities'
-                  ? 'bg-gray-900 text-white'
-                  : 'bg-white text-gray-600 hover:text-gray-900 hover:bg-gray-50'
+                ? 'bg-gray-900 text-white'
+                : 'bg-white text-gray-600 hover:text-gray-900 hover:bg-gray-50'
                 }`}
             >
               <Coffee size={18} className="inline mr-2" />
@@ -380,9 +381,16 @@ export default function LocationAmenitiesSection() {
             can transform your living experience in Kharadi.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <button className="px-8 py-3 bg-accent text-black font-semibold rounded-lg hover:shadow-lg transition-all duration-300">
-              Schedule Property Tour
-            </button>
+            <ContactFormDialog
+              title="Schedule Property Tour"
+              description="Book a visit to see the property in person."
+              serviceType="Schedule Visit"
+              trigger={
+                <button className="flex-1 bg-orange-500 text-white py-2 px-4 rounded-lg hover:bg-orange-600 transition-colors text-sm">
+                  Schedule Visit
+                </button>
+              }
+            />
             <button className="px-8 py-3 border-2 border-gray-900 text-gray-900 font-semibold rounded-lg hover:bg-gray-900 hover:text-white transition-all duration-300">
               Download Amenities Guide
             </button>

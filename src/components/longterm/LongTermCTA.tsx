@@ -17,7 +17,7 @@ export default function LongTermCTA() {
   const isInView = useInView(containerRef, { once: true, margin: "-10%" })
 
   return (
-    <section 
+    <section
       ref={containerRef}
       className="py-section bg-white relative overflow-hidden"
     >
@@ -33,7 +33,7 @@ export default function LongTermCTA() {
       </div>
 
       <div className="container mx-auto px-6 relative z-10">
-        
+
         {/* Main CTA Section */}
         <motion.div
           variants={withMotion(staggerContainer)}
@@ -49,14 +49,14 @@ export default function LongTermCTA() {
               <span className="w-2 h-2 bg-accent rounded-full inline-block mr-2 animate-pulse" />
               SECURE YOUR LONG-TERM HOME
             </span>
-            
+
             <h2 className="text-display-lg font-bold text-black mb-6">
               Ready for Extended Stay
               <span className="text-accent"> Comfort?</span>
             </h2>
 
             <p className="text-xl text-gray-600 font-light tracking-wide max-w-3xl mx-auto mb-8">
-              Join professionals who've chosen stability and savings with our long-term rentals. 
+              Join professionals who've chosen stability and savings with our long-term rentals.
               Secure your private space in Kharadi's premier IT hub with exclusive extended stay benefits.
             </p>
           </motion.div>
@@ -71,7 +71,7 @@ export default function LongTermCTA() {
               Book Long-term Stay
               <div className="absolute inset-0 bg-black/10 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
             </button>
-            
+
             <button className="group relative px-12 py-4 border-3 border-gray-900 text-gray-900 font-bold text-lg rounded-lg hover:bg-gray-900 hover:text-white transition-all duration-300 transform hover:scale-105">
               <Phone size={20} className="inline mr-3" />
               Talk to Specialist
@@ -123,7 +123,7 @@ export default function LongTermCTA() {
             <h3 className="text-xl font-bold text-black mb-2">Call Now</h3>
             <p className="text-gray-600 mb-4">Speak with long-term rental experts</p>
             <button className="w-full py-3 bg-green-600 text-white font-semibold rounded-lg hover:bg-green-700 transition-all duration-300">
-              Call +91 XXXXX XXXXX
+              Call +91 8908903900
             </button>
           </div>
 
@@ -162,7 +162,7 @@ export default function LongTermCTA() {
           <h3 className="text-2xl font-bold text-black mb-6 text-center">
             Why Choose Long-term with Cohousy?
           </h3>
-          
+
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
             {[
               { title: 'Significant Savings', subtitle: '₹3,000+ monthly discount' },

@@ -4,6 +4,7 @@ import { motion, useInView } from 'framer-motion'
 import { useState, useEffect, useRef } from 'react'
 import { Quote, Star, ChevronLeft, ChevronRight, User } from 'lucide-react'
 import { staggerContainer, fadeInUp, withMotion } from '@/lib/motion'
+import ContactFormDialog from './ContactFormDialog'
 
 const testimonials = [
   {
@@ -18,7 +19,7 @@ const testimonials = [
   {
     quote: "The community aspect is what sets Cohousy apart. I've made genuine connections with fellow professionals, and the safety standards are exceptional for women.",
     author: "Rahul Kumar",
-    role: "Product Manager", 
+    role: "Product Manager",
     company: "Infosys",
     rating: 5,
     location: "Cohousy WTC",
@@ -72,7 +73,7 @@ export default function TestimonialsSection() {
   }
 
   return (
-    <section 
+    <section
       ref={containerRef}
       className="py-section bg-gray-50 relative overflow-hidden"
     >
@@ -85,7 +86,7 @@ export default function TestimonialsSection() {
       </div>
 
       <div className="container mx-auto px-6 relative">
-        
+
         {/* Clean Section Header */}
         <motion.div
           variants={withMotion(staggerContainer)}
@@ -115,7 +116,7 @@ export default function TestimonialsSection() {
             variants={withMotion(fadeInUp)}
             className="text-xl text-gray-600 font-light tracking-wide max-w-3xl mx-auto"
           >
-            Discover why IT professionals choose Cohousy for their living experience 
+            Discover why IT professionals choose Cohousy for their living experience
             in Kharadi's premier locations.
           </motion.p>
         </motion.div>
@@ -165,7 +166,7 @@ export default function TestimonialsSection() {
                     </div>
                   </div>
                 </div>
-                
+
                 <div className="mt-4 md:mt-0 text-right">
                   <div className="text-sm text-gray-500">
                     {testimonials[currentIndex].duration}
@@ -190,9 +191,8 @@ export default function TestimonialsSection() {
                 <button
                   key={index}
                   onClick={() => setCurrentIndex(index)}
-                  className={`w-3 h-3 rounded-full transition-all duration-300 ${
-                    index === currentIndex ? 'bg-accent' : 'bg-gray-300 hover:bg-gray-400'
-                  }`}
+                  className={`w-3 h-3 rounded-full transition-all duration-300 ${index === currentIndex ? 'bg-accent' : 'bg-gray-300 hover:bg-gray-400'
+                    }`}
                 />
               ))}
             </div>
@@ -260,13 +260,22 @@ export default function TestimonialsSection() {
             Ready to Join Our Community?
           </h3>
           <p className="text-gray-600 mb-6 max-w-2xl mx-auto">
-            Experience what makes Cohousy the preferred choice for IT professionals 
+            Experience what makes Cohousy the preferred choice for IT professionals
             in Kharadi's premium locations.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <button className="px-8 py-3 bg-accent text-black font-semibold rounded-lg hover:shadow-lg transition-all duration-300">
-              Schedule a Visit
-            </button>
+            <ContactFormDialog
+              title="Schedule a Visit"
+              description="Book a visit to see the property in person."
+              serviceType="Schedule Visit"
+              trigger={
+                <div className='flex justify-center'>
+                  <button className="flex-1 bg-orange-500 text-white py-2 px-4 rounded-lg hover:bg-orange-600 w-fit transition-colors text-sm">
+                    Schedule Visit
+                  </button>
+                </div>
+              }
+            />
             <button className="px-8 py-3 border-2 border-gray-900 text-gray-900 font-semibold rounded-lg hover:bg-gray-900 hover:text-white transition-all duration-300">
               Read All Reviews
             </button>

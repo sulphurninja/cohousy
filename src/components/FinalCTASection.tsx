@@ -4,6 +4,7 @@ import { motion, useInView, useScroll, useTransform } from 'framer-motion'
 import { useRef } from 'react'
 import { Phone, Download, MapPin, Users, Home, Shield, Building2 } from 'lucide-react'
 import { staggerContainer, fadeInUp, withMotion } from '@/lib/motion'
+import ContactFormDialog from './ContactFormDialog'
 
 const ctaLinks = [
   {
@@ -48,16 +49,16 @@ const stats = [
 export default function FinalCTASection() {
   const containerRef = useRef<HTMLDivElement>(null)
   const isInView = useInView(containerRef, { once: true, margin: "-10%" })
-  
+
   const { scrollYProgress } = useScroll({
     target: containerRef,
     offset: ["start end", "end start"]
   })
-  
+
   const headerY = useTransform(scrollYProgress, [0, 0.3], [50, -50])
 
   return (
-    <section 
+    <section
       ref={containerRef}
       className="py-section bg-gradient-to-b from-gray-900 to-black relative overflow-hidden"
     >
@@ -70,7 +71,7 @@ export default function FinalCTASection() {
       </div>
 
       <div className="container mx-auto px-6 relative z-10">
-        
+
         {/* Clean CTA Header */}
         <motion.div
           style={{ y: headerY }}
@@ -101,7 +102,7 @@ export default function FinalCTASection() {
             variants={withMotion(fadeInUp)}
             className="text-xl text-gray-300 font-light tracking-wide max-w-3xl mx-auto mb-12"
           >
-            Join hundreds of professionals who've made Cohousy their home in 
+            Join hundreds of professionals who've made Cohousy their home in
             Kharadi's tech hub. Experience the perfect blend of comfort, community, and convenience.
           </motion.p>
 
@@ -110,11 +111,16 @@ export default function FinalCTASection() {
             variants={withMotion(fadeInUp)}
             className="flex flex-col sm:flex-row gap-6 justify-center mb-16"
           >
-            <button className="inline-flex items-center gap-3 px-8 py-4 bg-accent text-black text-lg font-semibold rounded-lg hover:shadow-xl hover:scale-105 transition-all duration-300">
-              <Phone size={20} />
-              Schedule a Visit
-            </button>
-
+            <ContactFormDialog
+              title="Schedule a Visit"
+              description="Book a visit to see the property in person."
+              serviceType="Schedule Visit"
+              trigger={
+                <button className="flex-1 bg-orange-500 text-white py-2 px-4 rounded-lg hover:bg-orange-600 transition-colors text-sm">
+                  Schedule Visit
+                </button>
+              }
+            />
             <button className="inline-flex items-center gap-3 px-8 py-4 border-2 border-white text-white text-lg font-semibold rounded-lg hover:bg-white hover:text-black transition-all duration-300">
               <Download size={20} />
               Download App
@@ -169,7 +175,7 @@ export default function FinalCTASection() {
                     <div className="p-3 bg-accent/80 rounded-lg group-hover:bg-accent group-hover:text-black transition-all duration-300">
                       <IconComponent size={24} strokeWidth={1.5} />
                     </div>
-                    
+
                     <div className="flex-1">
                       <h4 className="text-white font-semibold mb-2 group-hover:text-accent transition-colors duration-300">
                         {link.title}
@@ -202,21 +208,21 @@ export default function FinalCTASection() {
             Need Immediate Assistance?
           </h3>
           <p className="text-gray-300 mb-6 max-w-2xl mx-auto">
-            Our dedicated support team is available 24/7 to help you find the perfect 
+            Our dedicated support team is available 24/7 to help you find the perfect
             accommodation in Kharadi's premier locations.
           </p>
-          
+
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-            <a 
-              href="tel:+919876543210" 
+            <a
+              href="tel:+918908903900"
               className="inline-flex items-center gap-2 text-accent font-semibold hover:text-white transition-colors duration-300"
             >
               <Phone size={18} />
-              +91 98765 43210
+             +91 8908903900
             </a>
             <div className="hidden sm:block w-px h-6 bg-white/20" />
-            <a 
-              href="mailto:support@cohousy.com" 
+            <a
+              href="mailto:support@cohousy.com"
               className="text-gray-300 hover:text-accent transition-colors duration-300"
             >
               support@cohousy.com

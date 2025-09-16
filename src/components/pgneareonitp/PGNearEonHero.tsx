@@ -5,6 +5,7 @@ import { motion, useInView, useScroll, useTransform } from 'framer-motion'
 import Image from 'next/image'
 import { MapPin, Building2, Clock, Users } from 'lucide-react'
 import { staggerContainer, fadeInUp, splitLineReveal, withMotion } from '@/lib/motion'
+import ContactFormDialog from '../ContactFormDialog'
 
 const stats = [
   { value: '5 Min', label: 'Walk to Eon IT Park', icon: Clock },
@@ -16,16 +17,16 @@ const stats = [
 export default function PGNearEonHero() {
   const containerRef = useRef<HTMLDivElement>(null)
   const isInView = useInView(containerRef, { once: true })
-  
+
   const { scrollYProgress } = useScroll({
     target: containerRef,
     offset: ["start start", "end start"]
   })
-  
+
   const imageY = useTransform(scrollYProgress, [0, 1], [0, -100])
 
   return (
-    <section 
+    <section
       ref={containerRef}
       className="relative pt-36 pb-16 lg:pb-24 bg-white overflow-hidden"
     >
@@ -43,7 +44,7 @@ export default function PGNearEonHero() {
 
       <div className="container mx-auto px-6 relative z-10">
         <div className="grid lg:grid-cols-2 gap-16 items-center">
-          
+
           {/* Content Section */}
           <motion.div
             variants={withMotion(staggerContainer)}
@@ -96,8 +97,8 @@ export default function PGNearEonHero() {
               </p>
 
               <p className="text-lg text-gray-600 leading-relaxed">
-                If you're searching for premium accommodation that prioritizes comfort, security, 
-                and modern conveniences, Cohousy delivers exactly that. Our fully furnished single 
+                If you're searching for premium accommodation that prioritizes comfort, security,
+                and modern conveniences, Cohousy delivers exactly that. Our fully furnished single
                 and shared rooms offer hotel-like amenities, just minutes from Eon IT Park and WTC Kharadi.
               </p>
             </motion.div>
@@ -107,9 +108,18 @@ export default function PGNearEonHero() {
               variants={withMotion(fadeInUp)}
               className="flex flex-col sm:flex-row gap-4 mt-8"
             >
-              <button className="px-8 py-4 bg-orange-600 text-white font-semibold rounded-lg hover:shadow-lg transition-all duration-300">
-                Book Walking Distance PG
-              </button>
+              <ContactFormDialog
+                title="Schedule a Visit"
+                description="Book a visit to see the property in person."
+                serviceType="Schedule Visit"
+                trigger={
+                  <div className='flex justify-center'>
+                    <button className="flex-1 bg-orange-500 text-white py-2 px-4 rounded-lg hover:bg-orange-600 w-fit transition-colors text-sm">
+                      Schedule Visit
+                    </button>
+                  </div>
+                }
+              />
               <button className="px-8 py-4 border-2 border-gray-900 text-gray-900 font-semibold rounded-lg hover:bg-gray-900 hover:text-white transition-all duration-300">
                 Virtual Property Tour
               </button>
@@ -125,7 +135,7 @@ export default function PGNearEonHero() {
               src="/PG/hero.jpg"
               alt="PG accommodation walking distance from Eon IT Park Kharadi"
               fill
-              
+
               className="object-cover transition-transform duration-700  hover:scale-105"
               sizes="(max-width: 1024px) 100vw, 50vw"
             />
